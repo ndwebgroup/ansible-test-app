@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reason.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @reason.description %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @reason.importance %>
+</p>
+
+<%= link_to 'Edit', edit_reason_path(@reason) %> |
+<%= link_to 'Back', reasons_path %>
