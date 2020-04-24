@@ -1,0 +1,1343 @@
+# Logfile created on 2020-04-24 16:40:22 -0400 by logger.rb/56815
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 16:40:22 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9aab9a94] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9aab9a94] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 16:43:21 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4e54b496] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4e54b496] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 16:49:44 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [135863d9] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [135863d9] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 16:50:02 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [20efc6e0] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [20efc6e0] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 16:54:59 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [07df79df] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [07df79df] Command: /usr/bin/env mkdir -p /tmp
+  INFO [07df79df] Finished in 1.323 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [cb249be7] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cb249be7] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh
+  INFO [cb249be7] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [6ced7686] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6ced7686] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [6ced7686] 	Warning: Permanently added 'github.com,140.82.114.4' (RSA) to the list of known hosts.
+ DEBUG [6ced7686] 	7a970b7630b53681542317a94237bd81b18861ba	HEAD
+  INFO [6ced7686] Finished in 2.125 seconds with exit status 0 (successful).
+  INFO [1908701e] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1908701e] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases
+  INFO [1908701e] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [43e7beee] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [43e7beee] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets
+  INFO [43e7beee] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [abd94209] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [abd94209] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [abd94209] Finished in 0.196 seconds with exit status 1 (failed).
+ DEBUG [daec6350] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [daec6350] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [daec6350] Finished in 0.230 seconds with exit status 1 (failed).
+ DEBUG [9d4bcc0b] Running if test ! -d /home/deploy/apps; then echo "Directory does not exist '/home/deploy/apps'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9d4bcc0b] Command: if test ! -d /home/deploy/apps; then echo "Directory does not exist '/home/deploy/apps'" 1>&2; false; fi
+ DEBUG [9d4bcc0b] Finished in 0.193 seconds with exit status 0 (successful).
+  INFO [5b729294] Running /usr/bin/env git clone --mirror git@github.com:ndwebgroup/ansible-test-app.git /home/deploy/apps/repo as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5b729294] Command: cd /home/deploy/apps && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git clone --mirror git@github.com:ndwebgroup/ansible-test-app.git /home/deploy/apps/repo )
+ DEBUG [5b729294] 	Cloning into bare repository '/home/deploy/apps/repo'...
+  INFO [5b729294] Finished in 1.048 seconds with exit status 0 (successful).
+ DEBUG [e88fbcc9] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e88fbcc9] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [e88fbcc9] Finished in 0.228 seconds with exit status 0 (successful).
+  INFO [8e5166fd] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8e5166fd] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [8e5166fd] Finished in 0.199 seconds with exit status 0 (successful).
+  INFO [69e41d5b] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [69e41d5b] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [69e41d5b] 	Fetching origin
+  INFO [69e41d5b] Finished in 0.581 seconds with exit status 0 (successful).
+ DEBUG [2e3c6021] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2e3c6021] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [2e3c6021] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [44280ed7] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424205504 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [44280ed7] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424205504 )
+  INFO [44280ed7] Finished in 0.189 seconds with exit status 0 (successful).
+  INFO [db108a9f] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424205504 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [db108a9f] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424205504 )
+  INFO [db108a9f] Finished in 0.499 seconds with exit status 0 (successful).
+ DEBUG [eae70be3] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [eae70be3] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [eae70be3] Finished in 0.188 seconds with exit status 0 (successful).
+ DEBUG [1b59a2aa] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1b59a2aa] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1b59a2aa] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [1b59a2aa] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [afbb662c] Running if test ! -d /home/deploy/apps/releases/20200424205504; then echo "Directory does not exist '/home/deploy/apps/releases/20200424205504'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [afbb662c] Command: if test ! -d /home/deploy/apps/releases/20200424205504; then echo "Directory does not exist '/home/deploy/apps/releases/20200424205504'" 1>&2; false; fi
+ DEBUG [afbb662c] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [defea309] Running /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [defea309] Command: cd /home/deploy/apps/releases/20200424205504 && /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION
+  INFO [defea309] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [6987d8e4] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424205504 /home/deploy/apps/releases/20200424205504/tmp /home/deploy/apps/releases/20200424205504/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6987d8e4] Command: /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424205504 /home/deploy/apps/releases/20200424205504/tmp /home/deploy/apps/releases/20200424205504/public
+  INFO [6987d8e4] Finished in 0.188 seconds with exit status 0 (successful).
+ DEBUG [026c944e] Running [ -L /home/deploy/apps/releases/20200424205504/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [026c944e] Command: [ -L /home/deploy/apps/releases/20200424205504/log ]
+ DEBUG [026c944e] Finished in 0.233 seconds with exit status 1 (failed).
+ DEBUG [093b0781] Running [ -d /home/deploy/apps/releases/20200424205504/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [093b0781] Command: [ -d /home/deploy/apps/releases/20200424205504/log ]
+ DEBUG [093b0781] Finished in 0.188 seconds with exit status 0 (successful).
+  INFO [b00d606f] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424205504/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b00d606f] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424205504/log
+  INFO [b00d606f] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [11a9be18] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424205504/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [11a9be18] Command: /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424205504/log
+  INFO [11a9be18] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [c06ab1c9] Running [ -L /home/deploy/apps/releases/20200424205504/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c06ab1c9] Command: [ -L /home/deploy/apps/releases/20200424205504/tmp/pids ]
+ DEBUG [c06ab1c9] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [ee4dfc71] Running [ -d /home/deploy/apps/releases/20200424205504/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ee4dfc71] Command: [ -d /home/deploy/apps/releases/20200424205504/tmp/pids ]
+ DEBUG [ee4dfc71] Finished in 0.189 seconds with exit status 1 (failed).
+  INFO [f340f3c2] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424205504/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f340f3c2] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424205504/tmp/pids
+  INFO [f340f3c2] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [2d63210f] Running [ -L /home/deploy/apps/releases/20200424205504/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2d63210f] Command: [ -L /home/deploy/apps/releases/20200424205504/tmp/cache ]
+ DEBUG [2d63210f] Finished in 0.194 seconds with exit status 1 (failed).
+ DEBUG [3482fbe1] Running [ -d /home/deploy/apps/releases/20200424205504/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3482fbe1] Command: [ -d /home/deploy/apps/releases/20200424205504/tmp/cache ]
+ DEBUG [3482fbe1] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [d23e0dbb] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424205504/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d23e0dbb] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424205504/tmp/cache
+  INFO [d23e0dbb] Finished in 0.214 seconds with exit status 0 (successful).
+  INFO [95df7169] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424205504/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [95df7169] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424205504/tmp/cache
+  INFO [95df7169] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [6b93ee68] Running [ -L /home/deploy/apps/releases/20200424205504/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6b93ee68] Command: [ -L /home/deploy/apps/releases/20200424205504/tmp/sockets ]
+ DEBUG [6b93ee68] Finished in 0.190 seconds with exit status 1 (failed).
+ DEBUG [47f2df31] Running [ -d /home/deploy/apps/releases/20200424205504/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [47f2df31] Command: [ -d /home/deploy/apps/releases/20200424205504/tmp/sockets ]
+ DEBUG [47f2df31] Finished in 0.232 seconds with exit status 1 (failed).
+  INFO [e08854c7] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424205504/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e08854c7] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424205504/tmp/sockets
+  INFO [e08854c7] Finished in 0.200 seconds with exit status 0 (successful).
+ DEBUG [0d72906a] Running [ -L /home/deploy/apps/releases/20200424205504/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0d72906a] Command: [ -L /home/deploy/apps/releases/20200424205504/public/assets ]
+ DEBUG [0d72906a] Finished in 0.225 seconds with exit status 1 (failed).
+ DEBUG [cdf388fe] Running [ -d /home/deploy/apps/releases/20200424205504/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cdf388fe] Command: [ -d /home/deploy/apps/releases/20200424205504/public/assets ]
+ DEBUG [cdf388fe] Finished in 0.194 seconds with exit status 1 (failed).
+  INFO [01c076af] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424205504/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [01c076af] Command: /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424205504/public/assets
+  INFO [01c076af] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [ae807b3c] Running if test ! -d /home/deploy/apps/releases/20200424205504; then echo "Directory does not exist '/home/deploy/apps/releases/20200424205504'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ae807b3c] Command: if test ! -d /home/deploy/apps/releases/20200424205504; then echo "Directory does not exist '/home/deploy/apps/releases/20200424205504'" 1>&2; false; fi
+ DEBUG [ae807b3c] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [fefe6ecb] Running /usr/local/bin/chruby-exec ruby-2.4.8 -- bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fefe6ecb] Command: cd /home/deploy/apps/releases/20200424205504 && /usr/local/bin/chruby-exec ruby-2.4.8 -- bundle check --path /home/deploy/apps/shared/bundle
+ DEBUG [fefe6ecb] 	chruby: unknown Ruby: ruby-2.4.8
+ DEBUG [fefe6ecb] Finished in 0.295 seconds with exit status 1 (failed).
+  INFO [07460e5f] Running /usr/local/bin/chruby-exec ruby-2.4.8 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [07460e5f] Command: cd /home/deploy/apps/releases/20200424205504 && /usr/local/bin/chruby-exec ruby-2.4.8 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [07460e5f] 	chruby: unknown Ruby: ruby-2.4.8
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 17:56:32 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cc1b1cd2] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cc1b1cd2] Command: /usr/bin/env mkdir -p /tmp
+  INFO [cc1b1cd2] Finished in 1.483 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [1e64c49c] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1e64c49c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh
+  INFO [1e64c49c] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [16d08266] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [16d08266] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [16d08266] 	Warning: Permanently added the RSA host key for IP address '140.82.114.3' to the list of known hosts.
+ DEBUG [16d08266] 	7a970b7630b53681542317a94237bd81b18861ba	HEAD
+  INFO [16d08266] Finished in 0.568 seconds with exit status 0 (successful).
+  INFO [11e4cfb8] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [11e4cfb8] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases
+  INFO [11e4cfb8] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [a733c118] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a733c118] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets
+  INFO [a733c118] Finished in 0.188 seconds with exit status 0 (successful).
+ DEBUG [d3dc4049] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d3dc4049] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [d3dc4049] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [795def4f] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [795def4f] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [795def4f] Finished in 0.190 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [ce54f715] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ce54f715] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [ce54f715] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [2f93f2b1] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2f93f2b1] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [2f93f2b1] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [f4310803] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f4310803] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f4310803] 	Fetching origin
+  INFO [f4310803] Finished in 0.574 seconds with exit status 0 (successful).
+ DEBUG [20636ea1] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [20636ea1] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [20636ea1] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [58d2c32d] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424215635 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [58d2c32d] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424215635 )
+  INFO [58d2c32d] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [f85a23a7] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424215635 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f85a23a7] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424215635 )
+  INFO [f85a23a7] Finished in 0.425 seconds with exit status 0 (successful).
+ DEBUG [0eacdbb4] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0eacdbb4] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [0eacdbb4] Finished in 0.192 seconds with exit status 0 (successful).
+ DEBUG [7fed2dde] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7fed2dde] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7fed2dde] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [7fed2dde] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [74d47b44] Running if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [74d47b44] Command: if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi
+ DEBUG [74d47b44] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [8ec44b3e] Running /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8ec44b3e] Command: cd /home/deploy/apps/releases/20200424215635 && /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION
+  INFO [8ec44b3e] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [8674308b] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424215635 /home/deploy/apps/releases/20200424215635/tmp /home/deploy/apps/releases/20200424215635/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8674308b] Command: /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424215635 /home/deploy/apps/releases/20200424215635/tmp /home/deploy/apps/releases/20200424215635/public
+  INFO [8674308b] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [8d980b9a] Running [ -L /home/deploy/apps/releases/20200424215635/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8d980b9a] Command: [ -L /home/deploy/apps/releases/20200424215635/log ]
+ DEBUG [8d980b9a] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [627e9d6a] Running [ -d /home/deploy/apps/releases/20200424215635/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [627e9d6a] Command: [ -d /home/deploy/apps/releases/20200424215635/log ]
+ DEBUG [627e9d6a] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [721d7f93] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424215635/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [721d7f93] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424215635/log
+  INFO [721d7f93] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [94cd7bfb] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424215635/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [94cd7bfb] Command: /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424215635/log
+  INFO [94cd7bfb] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [b6708b96] Running [ -L /home/deploy/apps/releases/20200424215635/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b6708b96] Command: [ -L /home/deploy/apps/releases/20200424215635/tmp/pids ]
+ DEBUG [b6708b96] Finished in 0.237 seconds with exit status 1 (failed).
+ DEBUG [44341d90] Running [ -d /home/deploy/apps/releases/20200424215635/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [44341d90] Command: [ -d /home/deploy/apps/releases/20200424215635/tmp/pids ]
+ DEBUG [44341d90] Finished in 0.186 seconds with exit status 1 (failed).
+  INFO [dfe0f5d6] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424215635/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [dfe0f5d6] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424215635/tmp/pids
+  INFO [dfe0f5d6] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [a0e98f97] Running [ -L /home/deploy/apps/releases/20200424215635/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a0e98f97] Command: [ -L /home/deploy/apps/releases/20200424215635/tmp/cache ]
+ DEBUG [a0e98f97] Finished in 0.196 seconds with exit status 1 (failed).
+ DEBUG [5f237637] Running [ -d /home/deploy/apps/releases/20200424215635/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5f237637] Command: [ -d /home/deploy/apps/releases/20200424215635/tmp/cache ]
+ DEBUG [5f237637] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [ad5b77ba] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424215635/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ad5b77ba] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424215635/tmp/cache
+  INFO [ad5b77ba] Finished in 0.214 seconds with exit status 0 (successful).
+  INFO [fbdc670d] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424215635/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fbdc670d] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424215635/tmp/cache
+  INFO [fbdc670d] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [94ccab6e] Running [ -L /home/deploy/apps/releases/20200424215635/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [94ccab6e] Command: [ -L /home/deploy/apps/releases/20200424215635/tmp/sockets ]
+ DEBUG [94ccab6e] Finished in 0.188 seconds with exit status 1 (failed).
+ DEBUG [baa3dabd] Running [ -d /home/deploy/apps/releases/20200424215635/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [baa3dabd] Command: [ -d /home/deploy/apps/releases/20200424215635/tmp/sockets ]
+ DEBUG [baa3dabd] Finished in 0.230 seconds with exit status 1 (failed).
+  INFO [c0cadab2] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424215635/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c0cadab2] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424215635/tmp/sockets
+  INFO [c0cadab2] Finished in 0.190 seconds with exit status 0 (successful).
+ DEBUG [622cfcd0] Running [ -L /home/deploy/apps/releases/20200424215635/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [622cfcd0] Command: [ -L /home/deploy/apps/releases/20200424215635/public/assets ]
+ DEBUG [622cfcd0] Finished in 0.233 seconds with exit status 1 (failed).
+ DEBUG [3e618198] Running [ -d /home/deploy/apps/releases/20200424215635/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3e618198] Command: [ -d /home/deploy/apps/releases/20200424215635/public/assets ]
+ DEBUG [3e618198] Finished in 0.187 seconds with exit status 1 (failed).
+  INFO [48abdf90] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424215635/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [48abdf90] Command: /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424215635/public/assets
+  INFO [48abdf90] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG [57565180] Running if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [57565180] Command: if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi
+ DEBUG [57565180] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [385f58d2] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [385f58d2] Command: cd /home/deploy/apps/releases/20200424215635 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle
+ DEBUG [385f58d2] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [385f58d2] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [385f58d2] 	The following gems are missing
+ DEBUG [385f58d2] 	 * rake (13.0.1)
+ DEBUG [385f58d2] 	 * concurrent-ruby (1.1.6)
+ DEBUG [385f58d2] 	 * i18n (1.8.2)
+ DEBUG [385f58d2] 	 * minitest (5.14.0)
+ DEBUG [385f58d2] 	 * thread_safe (0.3.6)
+ DEBUG [385f58d2] 	 * tzinfo (1.2.7)
+ DEBUG [385f58d2] 	 * activesupport (5.2.4.2)
+ DEBUG [385f58d2] 	 * builder (3.2.4)
+ DEBUG [385f58d2] 	 * erubi (1.9.0)
+ DEBUG [385f58d2] 	 * mini_portile2 (2.4.0)
+ DEBUG [385f58d2] 	 * nokogiri (1.10.9)
+ DEBUG [385f58d2] 	 * rails-dom-testing (2.0.3)
+ DEBUG [385f58d2] 	 * crass (1.0.6)
+ DEBUG [385f58d2] 	 * loofah (2.5.0)
+ DEBUG [385f58d2] 	 * rails-html-sanitizer (1.3.0)
+ DEBUG [385f58d2] 	 * actionview (5.2.4.2)
+ DEBUG [385f58d2] 	 * rack (2.2.2)
+ DEBUG [385f58d2] 	 * rack-test (1.1.0)
+ DEBUG [385f58d2] 	 * actionpack (5.2.4.2)
+ DEBUG [385f58d2] 	 * nio4r (2.5.2)
+ DEBUG [385f58d2] 	 * websocket-extensions (0.1.4)
+ DEBUG [385f58d2] 	 * websocket-driver (0.7.1)
+ DEBUG [385f58d2] 	 * actioncable (5.2.4.2)
+ DEBUG [385f58d2] 	 * globalid (0.4.2)
+ DEBUG [385f58d2] 	 * activejob (5.2.4.2)
+ DEBUG [385f58d2] 	 * mini_mime (1.0.2)
+ DEBUG [385f58d2] 	 * mail (2.7.1)
+ DEBUG [385f58d2] 	 * actionmailer (5.2.4.2)
+ DEBUG [385f58d2] 	 * activemodel (5.2.4.2)
+ DEBUG [385f58d2] 	 * arel (9.0.0)
+ DEBUG [385f58d2] 	 * activerecord (5.2.4.2)
+ DEBUG [385f58d2] 	 * mimemagic (0.3.4)
+ DEBUG [385f58d2] 	 * marcel (0.3.3)
+ DEBUG [385f58d2] 	 * activestorage (5.2.4.2)
+ DEBUG [385f58d2] 	 * public_suffix (4.0.4)
+ DEBUG [385f58d2] 	 * addressable (2.7.0)
+ DEBUG [385f58d2] 	 * io-like (0.3.1)
+ DEBUG [385f58d2] 	 * archive-zip (0.12.0)
+ DEBUG [385f58d2] 	 * bindex (0.8.1)
+ DEBUG [385f58d2] 	 * msgpack (1.3.3)
+ DEBUG [385f58d2] 	 * bootsnap (1.4.6)
+ DEBUG [385f58d2] 	 * byebug (11.1.3)
+ DEBUG [385f58d2] 	 * regexp_parser (1.7.0)
+ DEBUG [385f58d2] 	 * xpath (3.2.0)
+ DEBUG [385f58d2] 	 * capybara (3.32.1)
+ DEBUG [385f58d2] 	 * childprocess (3.0.0)
+ DEBUG [385f58d2] 	 * chromedriver-helper (2.1.1)
+ DEBUG [385f58d2] 	 * coffee-script-source (1.12.2)
+ DEBUG [385f58d2] 	 * execjs (2.7.0)
+ DEBUG [385f58d2] 	 * coffee-script (2.4.1)
+ DEBUG [385f58d2] 	 * method_source (1.0.0)
+ DEBUG [385f58d2] 	 * thor (1.0.1)
+ DEBUG [385f58d2] 	 * railties (5.2.4.2)
+ DEBUG [385f58d2] 	 * coffee-rails (4.2.2)
+ DEBUG [385f58d2] 	 * ffi (1.12.2)
+ DEBUG [385f58d2] 	 * jbuilder (2.10.0)
+ DEBUG [385f58d2] 	 * rb-fsevent (0.10.3)
+ DEBUG [385f58d2] 	 * rb-inotify (0.10.1)
+ DEBUG [385f58d2] 	 * ruby_dep (1.5.0)
+ DEBUG [385f58d2] 	 * listen (3.1.5)
+ DEBUG [385f58d2] 	 * puma (3.12.4)
+ DEBUG [385f58d2] 	 * sprockets (3.7.2)
+ DEBUG [385f58d2] 	 * sprockets-rails (3.2.1)
+ DEBUG [385f58d2] 	 * rails (5.2.4.2)
+ DEBUG [385f58d2] 	 * rubyzip (2.3.0)
+ DEBUG [385f58d2] 	 * sass-listen (4.0.0)
+ DEBUG [385f58d2] 	 * sass (3.7.4)
+ DEBUG [385f58d2] 	 * tilt (2.0.10)
+ DEBUG [385f58d2] 	 * sass-rails (5.1.0)
+ DEBUG [385f58d2] 	 * selenium-webdriver (3.142.7)
+ DEBUG [385f58d2] 	 * spring (2.1.0)
+ DEBUG [385f58d2] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [385f58d2] 	 * sqlite3 (1.4.2)
+ DEBUG [385f58d2] 	 * turbolinks-source (5.2.0)
+ DEBUG [385f58d2] 	 * turbolinks (5.2.1)
+ DEBUG [385f58d2] 	 * uglifier (4.2.0)
+ DEBUG [385f58d2] 	 * web-console (3.7.0)
+ DEBUG [385f58d2] 	Install missing gems with `bundle install`
+ DEBUG [385f58d2] Finished in 0.619 seconds with exit status 1 (failed).
+  INFO [ecf579cf] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ecf579cf] Command: cd /home/deploy/apps/releases/20200424215635 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [ecf579cf] 	[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag
+ DEBUG [ecf579cf] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [ecf579cf] 	[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag
+  INFO [ecf579cf] Finished in 72.182 seconds with exit status 0 (successful).
+ DEBUG [403bf0fb] Running if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [403bf0fb] Command: if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi
+ DEBUG [403bf0fb] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [8838147d] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8838147d] Command: cd /home/deploy/apps/releases/20200424215635 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile )
+ DEBUG [8838147d] 	Yarn executable was not detected in the system.
+ DEBUG [8838147d] 	
+ DEBUG [8838147d] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [8838147d] 	
+ DEBUG [8838147d] 	I, [2020-04-24T21:58:01.464937 #113495]  INFO -- : Writing /home/deploy/apps/releases/20200424215635/public/assets/application-6123cad289a84e0cc1aa95fdfffef1cbed403e231776fa14f7407c66d504e3c8.js
+ DEBUG [8838147d] 	I, [2020-04-24T21:58:01.466969 #113495]  INFO -- : Writing /home/deploy/apps/releases/20200424215635/public/assets/application-6123cad289a84e0cc1aa95fdfffef1cbed403e231776fa14f7407c66d504e3c8.js.gz
+ DEBUG [8838147d] 	I, [2020-04-24T21:58:01.502881 #113495]  INFO -- : Writing /home/deploy/apps/releases/20200424215635/public/assets/application-35729bfbaf9967f119234595ed222f7ab14859f304ab0acc5451afb387f637fa.css
+ DEBUG [8838147d] 	I, [2020-04-24T21:58:01.503118 #113495]  INFO -- : Writing /home/deploy/apps/releases/20200424215635/public/assets/application-35729bfbaf9967f119234595ed222f7ab14859f304ab0acc5451afb387f637fa.css.gz
+  INFO [8838147d] Finished in 5.297 seconds with exit status 0 (successful).
+ DEBUG [857cdd3b] Running if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [857cdd3b] Command: if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi
+ DEBUG [857cdd3b] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [9adf5751] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424215635/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9adf5751] Command: cd /home/deploy/apps/releases/20200424215635 && /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424215635/assets_manifest_backup
+  INFO [9adf5751] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [2373184b] Running /usr/bin/env ls /home/deploy/apps/releases/20200424215635/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2373184b] Command: cd /home/deploy/apps/releases/20200424215635 && /usr/bin/env ls /home/deploy/apps/releases/20200424215635/public/assets/.sprockets-manifest*
+ DEBUG [2373184b] 	/home/deploy/apps/releases/20200424215635/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [2373184b] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [843c8dd6] Running /usr/bin/env ls /home/deploy/apps/releases/20200424215635/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [843c8dd6] Command: cd /home/deploy/apps/releases/20200424215635 && /usr/bin/env ls /home/deploy/apps/releases/20200424215635/public/assets/.sprockets-manifest*
+ DEBUG [843c8dd6] 	/home/deploy/apps/releases/20200424215635/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [843c8dd6] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [c11aa11e] Running /usr/bin/env cp /home/deploy/apps/releases/20200424215635/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424215635/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c11aa11e] Command: cd /home/deploy/apps/releases/20200424215635 && /usr/bin/env cp /home/deploy/apps/releases/20200424215635/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424215635/assets_manifest_backup
+  INFO [c11aa11e] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [f57fcf12] Running if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f57fcf12] Command: if test ! -d /home/deploy/apps/releases/20200424215635; then echo "Directory does not exist '/home/deploy/apps/releases/20200424215635'" 1>&2; false; fi
+ DEBUG [f57fcf12] Finished in 0.216 seconds with exit status 0 (successful).
+  INFO [0a605aed] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0a605aed] Command: cd /home/deploy/apps/releases/20200424215635 && ( export RAILS_ENV="production" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate )
+ DEBUG [0a605aed] 	== 20200424201919 CreateReasons: migrating ====================================
+-- create_table(:reasons)
+   -> 0.0005s
+== 20200424201919 CreateReasons: migrated (0.0006s) ===========================
+
+  INFO [0a605aed] Finished in 1.293 seconds with exit status 0 (successful).
+  INFO [a415e75d] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200424215635 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a415e75d] Command: /usr/bin/env ln -s /home/deploy/apps/releases/20200424215635 /home/deploy/apps/releases/current
+  INFO [a415e75d] Finished in 0.196 seconds with exit status 0 (successful).
+  INFO [5398a5ab] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5398a5ab] Command: /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps
+  INFO [5398a5ab] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [2765216e] Running /usr/bin/env ls -x /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2765216e] Command: /usr/bin/env ls -x /home/deploy/apps/releases
+ DEBUG [2765216e] 	20200424205504	20200424215635
+ DEBUG [2765216e] Finished in 0.198 seconds with exit status 0 (successful).
+ DEBUG [62f162c4] Running if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [62f162c4] Command: if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi
+ DEBUG [62f162c4] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [ca507857] Running /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424215635 by jarp" >> /home/deploy/apps/revisions.log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ca507857] Command: cd /home/deploy/apps/releases && /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424215635 by jarp" >> /home/deploy/apps/revisions.log
+  INFO [ca507857] Finished in 0.196 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 19:01:55 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2f8c30a0] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2f8c30a0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2f8c30a0] Finished in 2.093 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [36460348] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [36460348] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh
+  INFO [36460348] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [4839d44f] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4839d44f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [4839d44f] 	7a970b7630b53681542317a94237bd81b18861ba	HEAD
+  INFO [4839d44f] Finished in 0.639 seconds with exit status 0 (successful).
+  INFO [96716bd7] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [96716bd7] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases
+  INFO [96716bd7] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [c4156c7f] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c4156c7f] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets
+  INFO [c4156c7f] Finished in 0.198 seconds with exit status 0 (successful).
+ DEBUG [13bfa4b2] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [13bfa4b2] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [13bfa4b2] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [d8af744b] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d8af744b] Command: /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null
+ DEBUG [d8af744b] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [d8af744b] Finished in 0.197 seconds with exit status 0 (successful).
+ DEBUG [4f1a95b3] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4f1a95b3] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [4f1a95b3] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [3327466b] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3327466b] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [3327466b] Finished in 0.194 seconds with exit status 0 (successful).
+  INFO [0f7aa664] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0f7aa664] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [0f7aa664] Finished in 0.241 seconds with exit status 0 (successful).
+  INFO [d4a7e682] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d4a7e682] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d4a7e682] 	Fetching origin
+  INFO [d4a7e682] Finished in 0.760 seconds with exit status 0 (successful).
+ DEBUG [0bc814d7] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0bc814d7] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [0bc814d7] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [04d256a2] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230159 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [04d256a2] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230159 )
+  INFO [04d256a2] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [84527e4c] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424230159 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [84527e4c] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424230159 )
+  INFO [84527e4c] Finished in 0.553 seconds with exit status 0 (successful).
+ DEBUG [c6b8d6ae] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c6b8d6ae] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [c6b8d6ae] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [df981e56] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [df981e56] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [df981e56] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [df981e56] Finished in 0.201 seconds with exit status 0 (successful).
+ DEBUG [7044fe74] Running if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7044fe74] Command: if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi
+ DEBUG [7044fe74] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [598168d5] Running /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [598168d5] Command: cd /home/deploy/apps/releases/20200424230159 && /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION
+  INFO [598168d5] Finished in 0.195 seconds with exit status 0 (successful).
+  INFO [68a8397a] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230159 /home/deploy/apps/releases/20200424230159/tmp /home/deploy/apps/releases/20200424230159/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [68a8397a] Command: /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230159 /home/deploy/apps/releases/20200424230159/tmp /home/deploy/apps/releases/20200424230159/public
+  INFO [68a8397a] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [ba9b0e02] Running [ -L /home/deploy/apps/releases/20200424230159/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ba9b0e02] Command: [ -L /home/deploy/apps/releases/20200424230159/log ]
+ DEBUG [ba9b0e02] Finished in 0.196 seconds with exit status 1 (failed).
+ DEBUG [b860d79d] Running [ -d /home/deploy/apps/releases/20200424230159/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b860d79d] Command: [ -d /home/deploy/apps/releases/20200424230159/log ]
+ DEBUG [b860d79d] Finished in 0.227 seconds with exit status 0 (successful).
+  INFO [9190d901] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424230159/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9190d901] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424230159/log
+  INFO [9190d901] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [65abaeef] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424230159/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [65abaeef] Command: /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424230159/log
+  INFO [65abaeef] Finished in 0.248 seconds with exit status 0 (successful).
+ DEBUG [3a954476] Running [ -L /home/deploy/apps/releases/20200424230159/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3a954476] Command: [ -L /home/deploy/apps/releases/20200424230159/tmp/pids ]
+ DEBUG [3a954476] Finished in 0.190 seconds with exit status 1 (failed).
+ DEBUG [ee558170] Running [ -d /home/deploy/apps/releases/20200424230159/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ee558170] Command: [ -d /home/deploy/apps/releases/20200424230159/tmp/pids ]
+ DEBUG [ee558170] Finished in 0.232 seconds with exit status 1 (failed).
+  INFO [be993bf4] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424230159/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [be993bf4] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424230159/tmp/pids
+  INFO [be993bf4] Finished in 0.190 seconds with exit status 0 (successful).
+ DEBUG [f5bac482] Running [ -L /home/deploy/apps/releases/20200424230159/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f5bac482] Command: [ -L /home/deploy/apps/releases/20200424230159/tmp/cache ]
+ DEBUG [f5bac482] Finished in 0.229 seconds with exit status 1 (failed).
+ DEBUG [2d84d3ca] Running [ -d /home/deploy/apps/releases/20200424230159/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2d84d3ca] Command: [ -d /home/deploy/apps/releases/20200424230159/tmp/cache ]
+ DEBUG [2d84d3ca] Finished in 0.386 seconds with exit status 0 (successful).
+  INFO [77af7559] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424230159/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [77af7559] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424230159/tmp/cache
+  INFO [77af7559] Finished in 0.256 seconds with exit status 0 (successful).
+  INFO [d27c6159] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424230159/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d27c6159] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424230159/tmp/cache
+  INFO [d27c6159] Finished in 0.356 seconds with exit status 0 (successful).
+ DEBUG [ff09c072] Running [ -L /home/deploy/apps/releases/20200424230159/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ff09c072] Command: [ -L /home/deploy/apps/releases/20200424230159/tmp/sockets ]
+ DEBUG [ff09c072] Finished in 0.231 seconds with exit status 1 (failed).
+ DEBUG [7a8df970] Running [ -d /home/deploy/apps/releases/20200424230159/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7a8df970] Command: [ -d /home/deploy/apps/releases/20200424230159/tmp/sockets ]
+ DEBUG [7a8df970] Finished in 0.193 seconds with exit status 1 (failed).
+  INFO [674130d4] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424230159/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [674130d4] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424230159/tmp/sockets
+  INFO [674130d4] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [10a003dd] Running [ -L /home/deploy/apps/releases/20200424230159/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [10a003dd] Command: [ -L /home/deploy/apps/releases/20200424230159/public/assets ]
+ DEBUG [10a003dd] Finished in 0.190 seconds with exit status 1 (failed).
+ DEBUG [4eef7860] Running [ -d /home/deploy/apps/releases/20200424230159/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4eef7860] Command: [ -d /home/deploy/apps/releases/20200424230159/public/assets ]
+ DEBUG [4eef7860] Finished in 0.237 seconds with exit status 1 (failed).
+  INFO [5ade3d58] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424230159/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5ade3d58] Command: /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424230159/public/assets
+  INFO [5ade3d58] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG [ddd1a0cd] Running if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ddd1a0cd] Command: if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi
+ DEBUG [ddd1a0cd] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [2b550fec] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2b550fec] Command: cd /home/deploy/apps/releases/20200424230159 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle
+ DEBUG [2b550fec] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [2b550fec] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [2b550fec] 	The following gems are missing
+ DEBUG [2b550fec] 	 * public_suffix (4.0.4)
+ DEBUG [2b550fec] 	 * addressable (2.7.0)
+ DEBUG [2b550fec] 	 * io-like (0.3.1)
+ DEBUG [2b550fec] 	 * archive-zip (0.12.0)
+ DEBUG [2b550fec] 	 * bindex (0.8.1)
+ DEBUG [2b550fec] 	 * byebug (11.1.3)
+ DEBUG [2b550fec] 	 * regexp_parser (1.7.0)
+ DEBUG [2b550fec] 	 * xpath (3.2.0)
+ DEBUG [2b550fec] 	 * capybara (3.32.1)
+ DEBUG [2b550fec] 	 * childprocess (3.0.0)
+ DEBUG [2b550fec] 	 * chromedriver-helper (2.1.1)
+ DEBUG [2b550fec] 	 * ruby_dep (1.5.0)
+ DEBUG [2b550fec] 	 * listen (3.1.5)
+ DEBUG [2b550fec] 	 * rubyzip (2.3.0)
+ DEBUG [2b550fec] 	 * selenium-webdriver (3.142.7)
+ DEBUG [2b550fec] 	 * spring (2.1.0)
+ DEBUG [2b550fec] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [2b550fec] 	 * web-console (3.7.0)
+ DEBUG [2b550fec] 	Install missing gems with `bundle install`
+ DEBUG [2b550fec] Finished in 0.528 seconds with exit status 1 (failed).
+  INFO [d36b6cf6] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d36b6cf6] Command: cd /home/deploy/apps/releases/20200424230159 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [d36b6cf6] 	[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag
+ DEBUG [d36b6cf6] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [d36b6cf6] 	[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag
+  INFO [d36b6cf6] Finished in 0.724 seconds with exit status 0 (successful).
+ DEBUG [9b67da97] Running if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9b67da97] Command: if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi
+ DEBUG [9b67da97] Finished in 0.188 seconds with exit status 0 (successful).
+  INFO [3e99a3cc] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3e99a3cc] Command: cd /home/deploy/apps/releases/20200424230159 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile )
+ DEBUG [3e99a3cc] 	Yarn executable was not detected in the system.
+ DEBUG [3e99a3cc] 	
+ DEBUG [3e99a3cc] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [3e99a3cc] 	
+  INFO [3e99a3cc] Finished in 1.231 seconds with exit status 0 (successful).
+ DEBUG [7d2677ca] Running if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7d2677ca] Command: if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi
+ DEBUG [7d2677ca] Finished in 0.194 seconds with exit status 0 (successful).
+  INFO [74fbd295] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230159/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [74fbd295] Command: cd /home/deploy/apps/releases/20200424230159 && /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230159/assets_manifest_backup
+  INFO [74fbd295] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [40031ea3] Running /usr/bin/env ls /home/deploy/apps/releases/20200424230159/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [40031ea3] Command: cd /home/deploy/apps/releases/20200424230159 && /usr/bin/env ls /home/deploy/apps/releases/20200424230159/public/assets/.sprockets-manifest*
+ DEBUG [40031ea3] 	/home/deploy/apps/releases/20200424230159/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [40031ea3] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [062ac052] Running /usr/bin/env ls /home/deploy/apps/releases/20200424230159/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [062ac052] Command: cd /home/deploy/apps/releases/20200424230159 && /usr/bin/env ls /home/deploy/apps/releases/20200424230159/public/assets/.sprockets-manifest*
+ DEBUG [062ac052] 	/home/deploy/apps/releases/20200424230159/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [062ac052] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [4d85e27e] Running /usr/bin/env cp /home/deploy/apps/releases/20200424230159/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424230159/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4d85e27e] Command: cd /home/deploy/apps/releases/20200424230159 && /usr/bin/env cp /home/deploy/apps/releases/20200424230159/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424230159/assets_manifest_backup
+  INFO [4d85e27e] Finished in 0.188 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [26ac3987] Running if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [26ac3987] Command: if test ! -d /home/deploy/apps/releases/20200424230159; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230159'" 1>&2; false; fi
+ DEBUG [26ac3987] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [6bd8bde0] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6bd8bde0] Command: cd /home/deploy/apps/releases/20200424230159 && ( export RAILS_ENV="production" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate )
+ DEBUG [6bd8bde0] 	== 20200424201919 CreateReasons: migrating ====================================
+-- create_table(:reasons)
+   -> 0.0005s
+== 20200424201919 CreateReasons: migrated (0.0005s) ===========================
+
+  INFO [6bd8bde0] Finished in 1.017 seconds with exit status 0 (successful).
+  INFO [6e8d4d60] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200424230159 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6e8d4d60] Command: /usr/bin/env ln -s /home/deploy/apps/releases/20200424230159 /home/deploy/apps/releases/current
+  INFO [6e8d4d60] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [13c2fcc2] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [13c2fcc2] Command: /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps
+  INFO [13c2fcc2] Finished in 0.192 seconds with exit status 0 (successful).
+ DEBUG [192a9939] Running /usr/bin/env ls -x /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [192a9939] Command: /usr/bin/env ls -x /home/deploy/apps/releases
+ DEBUG [192a9939] 	20200424205504	20200424215635	20200424230159
+ DEBUG [192a9939] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [915b30fa] Running if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [915b30fa] Command: if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi
+ DEBUG [915b30fa] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [a1188a78] Running /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424230159 by jarp" >> /home/deploy/apps/revisions.log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a1188a78] Command: cd /home/deploy/apps/releases && /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424230159 by jarp" >> /home/deploy/apps/revisions.log
+  INFO [a1188a78] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 19:02:44 -0400 cap production puma:config
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /home/deploy/apps/shared/puma.rb 0.0%
+  INFO Uploading /home/deploy/apps/shared/puma.rb 100.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 19:03:51 -0400 cap production puma:config
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /home/deploy/apps/shared/puma.rb 0.0%
+  INFO Uploading /home/deploy/apps/shared/puma.rb 100.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 19:04:06 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e996267c] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e996267c] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e996267c] Finished in 1.387 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [ed0989c3] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ed0989c3] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh
+  INFO [ed0989c3] Finished in 0.196 seconds with exit status 0 (successful).
+  INFO [3ff7382f] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3ff7382f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [3ff7382f] 	7a970b7630b53681542317a94237bd81b18861ba	HEAD
+  INFO [3ff7382f] Finished in 0.600 seconds with exit status 0 (successful).
+  INFO [196fd792] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [196fd792] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases
+  INFO [196fd792] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [91efdfdb] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [91efdfdb] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets
+  INFO [91efdfdb] Finished in 0.185 seconds with exit status 0 (successful).
+ DEBUG [af52f3ed] Running [ -f /home/deploy/apps/shared/puma.rb ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [af52f3ed] Command: [ -f /home/deploy/apps/shared/puma.rb ]
+ DEBUG [af52f3ed] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [b0d72ef2] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b0d72ef2] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [b0d72ef2] Finished in 0.186 seconds with exit status 0 (successful).
+ DEBUG [b49d8fa6] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b49d8fa6] Command: /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null
+ DEBUG [b49d8fa6] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [b49d8fa6] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [1af89ecc] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1af89ecc] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [1af89ecc] Finished in 0.203 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [1865cf74] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1865cf74] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [1865cf74] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [babc138e] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [babc138e] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [babc138e] Finished in 0.213 seconds with exit status 0 (successful).
+  INFO [75593841] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [75593841] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [75593841] 	Fetching origin
+  INFO [75593841] Finished in 0.595 seconds with exit status 0 (successful).
+ DEBUG [b622d048] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b622d048] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [b622d048] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [0146b828] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230410 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0146b828] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230410 )
+  INFO [0146b828] Finished in 0.201 seconds with exit status 0 (successful).
+  INFO [f615d510] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424230410 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f615d510] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424230410 )
+  INFO [f615d510] Finished in 0.511 seconds with exit status 0 (successful).
+ DEBUG [0dbd06c9] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0dbd06c9] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [0dbd06c9] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [c4fbb3f3] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c4fbb3f3] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [c4fbb3f3] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [c4fbb3f3] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [4e32af1e] Running if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4e32af1e] Command: if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi
+ DEBUG [4e32af1e] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO [ebe67d7c] Running /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ebe67d7c] Command: cd /home/deploy/apps/releases/20200424230410 && /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION
+  INFO [ebe67d7c] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [dd6dfd2e] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230410 /home/deploy/apps/releases/20200424230410/tmp /home/deploy/apps/releases/20200424230410/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [dd6dfd2e] Command: /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230410 /home/deploy/apps/releases/20200424230410/tmp /home/deploy/apps/releases/20200424230410/public
+  INFO [dd6dfd2e] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [6b93c61f] Running [ -L /home/deploy/apps/releases/20200424230410/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6b93c61f] Command: [ -L /home/deploy/apps/releases/20200424230410/log ]
+ DEBUG [6b93c61f] Finished in 0.239 seconds with exit status 1 (failed).
+ DEBUG [85544e13] Running [ -d /home/deploy/apps/releases/20200424230410/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [85544e13] Command: [ -d /home/deploy/apps/releases/20200424230410/log ]
+ DEBUG [85544e13] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [3c8d7dac] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424230410/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3c8d7dac] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424230410/log
+  INFO [3c8d7dac] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [269d6984] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424230410/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [269d6984] Command: /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424230410/log
+  INFO [269d6984] Finished in 0.206 seconds with exit status 0 (successful).
+ DEBUG [a44b1022] Running [ -L /home/deploy/apps/releases/20200424230410/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a44b1022] Command: [ -L /home/deploy/apps/releases/20200424230410/tmp/pids ]
+ DEBUG [a44b1022] Finished in 0.233 seconds with exit status 1 (failed).
+ DEBUG [8b3ceb8e] Running [ -d /home/deploy/apps/releases/20200424230410/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8b3ceb8e] Command: [ -d /home/deploy/apps/releases/20200424230410/tmp/pids ]
+ DEBUG [8b3ceb8e] Finished in 0.200 seconds with exit status 1 (failed).
+  INFO [fa7538ba] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424230410/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fa7538ba] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424230410/tmp/pids
+  INFO [fa7538ba] Finished in 0.247 seconds with exit status 0 (successful).
+ DEBUG [28761663] Running [ -L /home/deploy/apps/releases/20200424230410/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [28761663] Command: [ -L /home/deploy/apps/releases/20200424230410/tmp/cache ]
+ DEBUG [28761663] Finished in 0.186 seconds with exit status 1 (failed).
+ DEBUG [6bd46d0b] Running [ -d /home/deploy/apps/releases/20200424230410/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6bd46d0b] Command: [ -d /home/deploy/apps/releases/20200424230410/tmp/cache ]
+ DEBUG [6bd46d0b] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [6705e2d1] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424230410/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6705e2d1] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424230410/tmp/cache
+  INFO [6705e2d1] Finished in 0.217 seconds with exit status 0 (successful).
+  INFO [f4a1ebe7] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424230410/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f4a1ebe7] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424230410/tmp/cache
+  INFO [f4a1ebe7] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG [da3c5a7b] Running [ -L /home/deploy/apps/releases/20200424230410/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [da3c5a7b] Command: [ -L /home/deploy/apps/releases/20200424230410/tmp/sockets ]
+ DEBUG [da3c5a7b] Finished in 0.193 seconds with exit status 1 (failed).
+ DEBUG [fef8c50a] Running [ -d /home/deploy/apps/releases/20200424230410/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fef8c50a] Command: [ -d /home/deploy/apps/releases/20200424230410/tmp/sockets ]
+ DEBUG [fef8c50a] Finished in 0.228 seconds with exit status 1 (failed).
+  INFO [0d371e84] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424230410/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0d371e84] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424230410/tmp/sockets
+  INFO [0d371e84] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [ec6e9882] Running [ -L /home/deploy/apps/releases/20200424230410/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ec6e9882] Command: [ -L /home/deploy/apps/releases/20200424230410/public/assets ]
+ DEBUG [ec6e9882] Finished in 0.231 seconds with exit status 1 (failed).
+ DEBUG [4ff21d81] Running [ -d /home/deploy/apps/releases/20200424230410/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4ff21d81] Command: [ -d /home/deploy/apps/releases/20200424230410/public/assets ]
+ DEBUG [4ff21d81] Finished in 0.195 seconds with exit status 1 (failed).
+  INFO [ec8f18b7] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424230410/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ec8f18b7] Command: /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424230410/public/assets
+  INFO [ec8f18b7] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [31ae8c32] Running if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [31ae8c32] Command: if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi
+ DEBUG [31ae8c32] Finished in 0.193 seconds with exit status 0 (successful).
+ DEBUG [ee8d5d3e] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ee8d5d3e] Command: cd /home/deploy/apps/releases/20200424230410 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle
+ DEBUG [ee8d5d3e] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [ee8d5d3e] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [ee8d5d3e] 	The following gems are missing
+ DEBUG [ee8d5d3e] 	 * public_suffix (4.0.4)
+ DEBUG [ee8d5d3e] 	 * addressable (2.7.0)
+ DEBUG [ee8d5d3e] 	 * io-like (0.3.1)
+ DEBUG [ee8d5d3e] 	 * archive-zip (0.12.0)
+ DEBUG [ee8d5d3e] 	 * bindex (0.8.1)
+ DEBUG [ee8d5d3e] 	 * byebug (11.1.3)
+ DEBUG [ee8d5d3e] 	 * regexp_parser (1.7.0)
+ DEBUG [ee8d5d3e] 	 * xpath (3.2.0)
+ DEBUG [ee8d5d3e] 	 * capybara (3.32.1)
+ DEBUG [ee8d5d3e] 	 * childprocess (3.0.0)
+ DEBUG [ee8d5d3e] 	 * chromedriver-helper (2.1.1)
+ DEBUG [ee8d5d3e] 	 * ruby_dep (1.5.0)
+ DEBUG [ee8d5d3e] 	 * listen (3.1.5)
+ DEBUG [ee8d5d3e] 	 * rubyzip (2.3.0)
+ DEBUG [ee8d5d3e] 	 * selenium-webdriver (3.142.7)
+ DEBUG [ee8d5d3e] 	 * spring (2.1.0)
+ DEBUG [ee8d5d3e] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [ee8d5d3e] 	 * web-console (3.7.0)
+ DEBUG [ee8d5d3e] 	Install missing gems with `bundle install`
+ DEBUG [ee8d5d3e] Finished in 0.561 seconds with exit status 1 (failed).
+  INFO [fc2455ec] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fc2455ec] Command: cd /home/deploy/apps/releases/20200424230410 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [fc2455ec] 	[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag
+ DEBUG [fc2455ec] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [fc2455ec] 	[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag
+  INFO [fc2455ec] Finished in 0.554 seconds with exit status 0 (successful).
+ DEBUG [956033b0] Running if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [956033b0] Command: if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi
+ DEBUG [956033b0] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [b6468c7d] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b6468c7d] Command: cd /home/deploy/apps/releases/20200424230410 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile )
+ DEBUG [b6468c7d] 	Yarn executable was not detected in the system.
+ DEBUG [b6468c7d] 	
+ DEBUG [b6468c7d] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [b6468c7d] 	
+  INFO [b6468c7d] Finished in 1.180 seconds with exit status 0 (successful).
+ DEBUG [a7784f55] Running if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a7784f55] Command: if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi
+ DEBUG [a7784f55] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [48a0b3b9] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230410/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [48a0b3b9] Command: cd /home/deploy/apps/releases/20200424230410 && /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424230410/assets_manifest_backup
+  INFO [48a0b3b9] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [4be4bd12] Running /usr/bin/env ls /home/deploy/apps/releases/20200424230410/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4be4bd12] Command: cd /home/deploy/apps/releases/20200424230410 && /usr/bin/env ls /home/deploy/apps/releases/20200424230410/public/assets/.sprockets-manifest*
+ DEBUG [4be4bd12] 	/home/deploy/apps/releases/20200424230410/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [4be4bd12] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [6319232e] Running /usr/bin/env ls /home/deploy/apps/releases/20200424230410/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6319232e] Command: cd /home/deploy/apps/releases/20200424230410 && /usr/bin/env ls /home/deploy/apps/releases/20200424230410/public/assets/.sprockets-manifest*
+ DEBUG [6319232e] 	/home/deploy/apps/releases/20200424230410/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [6319232e] Finished in 0.190 seconds with exit status 0 (successful).
+  INFO [90c9eca0] Running /usr/bin/env cp /home/deploy/apps/releases/20200424230410/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424230410/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [90c9eca0] Command: cd /home/deploy/apps/releases/20200424230410 && /usr/bin/env cp /home/deploy/apps/releases/20200424230410/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424230410/assets_manifest_backup
+  INFO [90c9eca0] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [7f40e72a] Running if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7f40e72a] Command: if test ! -d /home/deploy/apps/releases/20200424230410; then echo "Directory does not exist '/home/deploy/apps/releases/20200424230410'" 1>&2; false; fi
+ DEBUG [7f40e72a] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [3adfd253] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3adfd253] Command: cd /home/deploy/apps/releases/20200424230410 && ( export RAILS_ENV="production" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate )
+ DEBUG [3adfd253] 	== 20200424201919 CreateReasons: migrating ====================================
+-- create_table(:reasons)
+   -> 0.0005s
+== 20200424201919 CreateReasons: migrated (0.0005s) ===========================
+
+  INFO [3adfd253] Finished in 1.064 seconds with exit status 0 (successful).
+  INFO [90f06ef0] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200424230410 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [90f06ef0] Command: /usr/bin/env ln -s /home/deploy/apps/releases/20200424230410 /home/deploy/apps/releases/current
+  INFO [90f06ef0] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [52beede6] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [52beede6] Command: /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps
+  INFO [52beede6] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG [86a031f1] Running /usr/bin/env ls -x /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [86a031f1] Command: /usr/bin/env ls -x /home/deploy/apps/releases
+ DEBUG [86a031f1] 	20200424205504	20200424215635	20200424230159	20200424230410
+ DEBUG [86a031f1] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [5a335a0d] Running if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5a335a0d] Command: if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi
+ DEBUG [5a335a0d] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [59697a55] Running /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424230410 by jarp" >> /home/deploy/apps/revisions.log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [59697a55] Command: cd /home/deploy/apps/releases && /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424230410 by jarp" >> /home/deploy/apps/revisions.log
+  INFO [59697a55] Finished in 0.196 seconds with exit status 0 (successful).
+ DEBUG [d9a2b2b7] Running if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d9a2b2b7] Command: if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi
+ DEBUG [d9a2b2b7] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [bd3c1fd7] Running [ -f /home/deploy/apps/shared/tmp/pids/puma.pid ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bd3c1fd7] Command: [ -f /home/deploy/apps/shared/tmp/pids/puma.pid ]
+ DEBUG [bd3c1fd7] Finished in 0.191 seconds with exit status 1 (failed).
+ DEBUG [fe8b67fd] Running [ -f /home/deploy/apps/shared/puma.rb ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fe8b67fd] Command: [ -f /home/deploy/apps/shared/puma.rb ]
+ DEBUG [fe8b67fd] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO using conf file /home/deploy/apps/shared/puma.rb
+ DEBUG [aff60b2b] Running [ -f /home/deploy/apps/shared/tmp/pids/puma.pid ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [aff60b2b] Command: [ -f /home/deploy/apps/shared/tmp/pids/puma.pid ]
+ DEBUG [aff60b2b] Finished in 0.191 seconds with exit status 1 (failed).
+ DEBUG [902d9420] Running if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [902d9420] Command: if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi
+ DEBUG [902d9420] Finished in 0.230 seconds with exit status 0 (successful).
+  INFO [f452bb64] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec puma -C /home/deploy/apps/shared/puma.rb --daemon as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f452bb64] Command: cd /home/deploy/apps/current && ( export RACK_ENV="production" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec puma -C /home/deploy/apps/shared/puma.rb --daemon )
+ DEBUG [f452bb64] 	Puma starting in single mode...
+ DEBUG [f452bb64] 	
+ DEBUG [f452bb64] 	* Version 3.12.4 (ruby 2.4.6-p354), codename: Llamas in Pajamas
+ DEBUG [f452bb64] 	
+ DEBUG [f452bb64] 	* Min threads: 0, max threads: 16
+ DEBUG [f452bb64] 	
+ DEBUG [f452bb64] 	* Environment: production
+ DEBUG [f452bb64] 	
+ DEBUG [f452bb64] 	* Daemonizing...
+ DEBUG [f452bb64] 	
+  INFO [f452bb64] Finished in 0.619 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 19:11:00 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [30af55bb] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [30af55bb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [30af55bb] Finished in 1.254 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [d183d61e] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d183d61e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh
+  INFO [d183d61e] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [2c83272f] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2c83272f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [2c83272f] 	7a970b7630b53681542317a94237bd81b18861ba	HEAD
+  INFO [2c83272f] Finished in 0.564 seconds with exit status 0 (successful).
+  INFO [fe58a1d7] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fe58a1d7] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases
+  INFO [fe58a1d7] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [07f71f44] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [07f71f44] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets
+  INFO [07f71f44] Finished in 0.204 seconds with exit status 0 (successful).
+ DEBUG [c9a0b659] Running [ -f /home/deploy/apps/shared/puma.rb ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c9a0b659] Command: [ -f /home/deploy/apps/shared/puma.rb ]
+ DEBUG [c9a0b659] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [a6a5f941] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a6a5f941] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [a6a5f941] Finished in 0.193 seconds with exit status 0 (successful).
+ DEBUG [e8568421] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e8568421] Command: /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null
+ DEBUG [e8568421] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [e8568421] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [14f0950d] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [14f0950d] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [14f0950d] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [2bd599f0] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2bd599f0] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [2bd599f0] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [41b8eea2] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [41b8eea2] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [41b8eea2] Finished in 0.193 seconds with exit status 0 (successful).
+  INFO [b8e21dd3] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b8e21dd3] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b8e21dd3] 	Fetching origin
+  INFO [b8e21dd3] Finished in 0.573 seconds with exit status 0 (successful).
+ DEBUG [9ce89b02] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9ce89b02] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [9ce89b02] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [9c8d4aa8] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424231104 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9c8d4aa8] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424231104 )
+  INFO [9c8d4aa8] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [b40f23c0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424231104 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b40f23c0] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424231104 )
+  INFO [b40f23c0] Finished in 0.439 seconds with exit status 0 (successful).
+ DEBUG [8b0a07cc] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8b0a07cc] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [8b0a07cc] Finished in 0.184 seconds with exit status 0 (successful).
+ DEBUG [89a5249b] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [89a5249b] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [89a5249b] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [89a5249b] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [33083852] Running if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [33083852] Command: if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi
+ DEBUG [33083852] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO [ed842dcf] Running /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ed842dcf] Command: cd /home/deploy/apps/releases/20200424231104 && /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION
+  INFO [ed842dcf] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [9a83e5ef] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424231104 /home/deploy/apps/releases/20200424231104/tmp /home/deploy/apps/releases/20200424231104/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9a83e5ef] Command: /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424231104 /home/deploy/apps/releases/20200424231104/tmp /home/deploy/apps/releases/20200424231104/public
+  INFO [9a83e5ef] Finished in 0.204 seconds with exit status 0 (successful).
+ DEBUG [cde84d34] Running [ -L /home/deploy/apps/releases/20200424231104/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cde84d34] Command: [ -L /home/deploy/apps/releases/20200424231104/log ]
+ DEBUG [cde84d34] Finished in 0.238 seconds with exit status 1 (failed).
+ DEBUG [66082ed3] Running [ -d /home/deploy/apps/releases/20200424231104/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [66082ed3] Command: [ -d /home/deploy/apps/releases/20200424231104/log ]
+ DEBUG [66082ed3] Finished in 0.192 seconds with exit status 0 (successful).
+  INFO [d7974cdd] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424231104/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d7974cdd] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424231104/log
+  INFO [d7974cdd] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [a1d07857] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424231104/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a1d07857] Command: /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424231104/log
+  INFO [a1d07857] Finished in 0.190 seconds with exit status 0 (successful).
+ DEBUG [94f51090] Running [ -L /home/deploy/apps/releases/20200424231104/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [94f51090] Command: [ -L /home/deploy/apps/releases/20200424231104/tmp/pids ]
+ DEBUG [94f51090] Finished in 0.235 seconds with exit status 1 (failed).
+ DEBUG [11690b2c] Running [ -d /home/deploy/apps/releases/20200424231104/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [11690b2c] Command: [ -d /home/deploy/apps/releases/20200424231104/tmp/pids ]
+ DEBUG [11690b2c] Finished in 0.191 seconds with exit status 1 (failed).
+  INFO [683afccf] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424231104/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [683afccf] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424231104/tmp/pids
+  INFO [683afccf] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG [6e0b9b8b] Running [ -L /home/deploy/apps/releases/20200424231104/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6e0b9b8b] Command: [ -L /home/deploy/apps/releases/20200424231104/tmp/cache ]
+ DEBUG [6e0b9b8b] Finished in 0.187 seconds with exit status 1 (failed).
+ DEBUG [2f4aa3a5] Running [ -d /home/deploy/apps/releases/20200424231104/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2f4aa3a5] Command: [ -d /home/deploy/apps/releases/20200424231104/tmp/cache ]
+ DEBUG [2f4aa3a5] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [5afdf2ec] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424231104/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5afdf2ec] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424231104/tmp/cache
+  INFO [5afdf2ec] Finished in 0.217 seconds with exit status 0 (successful).
+  INFO [8420303d] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424231104/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8420303d] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424231104/tmp/cache
+  INFO [8420303d] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [8ab23eb7] Running [ -L /home/deploy/apps/releases/20200424231104/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8ab23eb7] Command: [ -L /home/deploy/apps/releases/20200424231104/tmp/sockets ]
+ DEBUG [8ab23eb7] Finished in 0.194 seconds with exit status 1 (failed).
+ DEBUG [a19a5c3a] Running [ -d /home/deploy/apps/releases/20200424231104/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a19a5c3a] Command: [ -d /home/deploy/apps/releases/20200424231104/tmp/sockets ]
+ DEBUG [a19a5c3a] Finished in 0.238 seconds with exit status 1 (failed).
+  INFO [5d56280d] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424231104/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5d56280d] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424231104/tmp/sockets
+  INFO [5d56280d] Finished in 0.187 seconds with exit status 0 (successful).
+ DEBUG [1a169301] Running [ -L /home/deploy/apps/releases/20200424231104/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1a169301] Command: [ -L /home/deploy/apps/releases/20200424231104/public/assets ]
+ DEBUG [1a169301] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [a4768d88] Running [ -d /home/deploy/apps/releases/20200424231104/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a4768d88] Command: [ -d /home/deploy/apps/releases/20200424231104/public/assets ]
+ DEBUG [a4768d88] Finished in 0.193 seconds with exit status 1 (failed).
+  INFO [d7a8931a] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424231104/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d7a8931a] Command: /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424231104/public/assets
+  INFO [d7a8931a] Finished in 0.269 seconds with exit status 0 (successful).
+ DEBUG [983d17ed] Running if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [983d17ed] Command: if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi
+ DEBUG [983d17ed] Finished in 0.190 seconds with exit status 0 (successful).
+ DEBUG [0db0a4af] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0db0a4af] Command: cd /home/deploy/apps/releases/20200424231104 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle
+ DEBUG [0db0a4af] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [0db0a4af] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [0db0a4af] 	The following gems are missing
+ DEBUG [0db0a4af] 	 * public_suffix (4.0.4)
+ DEBUG [0db0a4af] 	 * addressable (2.7.0)
+ DEBUG [0db0a4af] 	 * io-like (0.3.1)
+ DEBUG [0db0a4af] 	 * archive-zip (0.12.0)
+ DEBUG [0db0a4af] 	 * bindex (0.8.1)
+ DEBUG [0db0a4af] 	 * byebug (11.1.3)
+ DEBUG [0db0a4af] 	 * regexp_parser (1.7.0)
+ DEBUG [0db0a4af] 	 * xpath (3.2.0)
+ DEBUG [0db0a4af] 	 * capybara (3.32.1)
+ DEBUG [0db0a4af] 	 * childprocess (3.0.0)
+ DEBUG [0db0a4af] 	 * chromedriver-helper (2.1.1)
+ DEBUG [0db0a4af] 	 * ruby_dep (1.5.0)
+ DEBUG [0db0a4af] 	 * listen (3.1.5)
+ DEBUG [0db0a4af] 	 * rubyzip (2.3.0)
+ DEBUG [0db0a4af] 	 * selenium-webdriver (3.142.7)
+ DEBUG [0db0a4af] 	 * spring (2.1.0)
+ DEBUG [0db0a4af] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [0db0a4af] 	 * web-console (3.7.0)
+ DEBUG [0db0a4af] 	Install missing gems with `bundle install`
+ DEBUG [0db0a4af] Finished in 0.573 seconds with exit status 1 (failed).
+  INFO [6d879282] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6d879282] Command: cd /home/deploy/apps/releases/20200424231104 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [6d879282] 	[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag
+ DEBUG [6d879282] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [6d879282] 	[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag
+  INFO [6d879282] Finished in 0.563 seconds with exit status 0 (successful).
+ DEBUG [aa60a8ad] Running if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [aa60a8ad] Command: if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi
+ DEBUG [aa60a8ad] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [0e6fcfcd] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0e6fcfcd] Command: cd /home/deploy/apps/releases/20200424231104 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile )
+ DEBUG [0e6fcfcd] 	Yarn executable was not detected in the system.
+ DEBUG [0e6fcfcd] 	
+ DEBUG [0e6fcfcd] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [0e6fcfcd] 	
+  INFO [0e6fcfcd] Finished in 1.207 seconds with exit status 0 (successful).
+ DEBUG [d68bd660] Running if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d68bd660] Command: if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi
+ DEBUG [d68bd660] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [d16d2129] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424231104/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d16d2129] Command: cd /home/deploy/apps/releases/20200424231104 && /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424231104/assets_manifest_backup
+  INFO [d16d2129] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [46cff206] Running /usr/bin/env ls /home/deploy/apps/releases/20200424231104/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [46cff206] Command: cd /home/deploy/apps/releases/20200424231104 && /usr/bin/env ls /home/deploy/apps/releases/20200424231104/public/assets/.sprockets-manifest*
+ DEBUG [46cff206] 	/home/deploy/apps/releases/20200424231104/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [46cff206] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [72526ac2] Running /usr/bin/env ls /home/deploy/apps/releases/20200424231104/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [72526ac2] Command: cd /home/deploy/apps/releases/20200424231104 && /usr/bin/env ls /home/deploy/apps/releases/20200424231104/public/assets/.sprockets-manifest*
+ DEBUG [72526ac2] 	/home/deploy/apps/releases/20200424231104/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [72526ac2] Finished in 0.204 seconds with exit status 0 (successful).
+  INFO [4877ff03] Running /usr/bin/env cp /home/deploy/apps/releases/20200424231104/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424231104/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4877ff03] Command: cd /home/deploy/apps/releases/20200424231104 && /usr/bin/env cp /home/deploy/apps/releases/20200424231104/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424231104/assets_manifest_backup
+  INFO [4877ff03] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [6a37e71c] Running if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6a37e71c] Command: if test ! -d /home/deploy/apps/releases/20200424231104; then echo "Directory does not exist '/home/deploy/apps/releases/20200424231104'" 1>&2; false; fi
+ DEBUG [6a37e71c] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [d0ee6b1e] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d0ee6b1e] Command: cd /home/deploy/apps/releases/20200424231104 && ( export RAILS_ENV="production" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate )
+ DEBUG [d0ee6b1e] 	== 20200424201919 CreateReasons: migrating ====================================
+-- create_table(:reasons)
+   -> 0.0005s
+== 20200424201919 CreateReasons: migrated (0.0005s) ===========================
+
+  INFO [d0ee6b1e] Finished in 1.132 seconds with exit status 0 (successful).
+  INFO [fa8becc4] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200424231104 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fa8becc4] Command: /usr/bin/env ln -s /home/deploy/apps/releases/20200424231104 /home/deploy/apps/releases/current
+  INFO [fa8becc4] Finished in 0.165 seconds with exit status 0 (successful).
+  INFO [caba69df] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [caba69df] Command: /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps
+  INFO [caba69df] Finished in 0.244 seconds with exit status 0 (successful).
+ DEBUG [38822721] Running /usr/bin/env ls -x /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [38822721] Command: /usr/bin/env ls -x /home/deploy/apps/releases
+ DEBUG [38822721] 	20200424205504	20200424215635	20200424230159	20200424230410	20200424231104
+ DEBUG [38822721] Finished in 0.187 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7332af49] Running [ -d /home/deploy/apps/current ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7332af49] Command: [ -d /home/deploy/apps/current ]
+ DEBUG [7332af49] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [68a09b58] Running /usr/bin/env readlink /home/deploy/apps/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [68a09b58] Command: /usr/bin/env readlink /home/deploy/apps/current
+ DEBUG [68a09b58] 	/home/deploy/apps/releases/20200424231104
+ DEBUG [68a09b58] Finished in 0.189 seconds with exit status 0 (successful).
+  INFO No old releases (keeping newest 5) on ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ea117087] Running if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ea117087] Command: if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi
+ DEBUG [ea117087] Finished in 0.257 seconds with exit status 0 (successful).
+  INFO [93d0e55d] Running /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424231104 by jarp" >> /home/deploy/apps/revisions.log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [93d0e55d] Command: cd /home/deploy/apps/releases && /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424231104 by jarp" >> /home/deploy/apps/revisions.log
+  INFO [93d0e55d] Finished in 0.192 seconds with exit status 0 (successful).
+ DEBUG [cf26b788] Running if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cf26b788] Command: if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi
+ DEBUG [cf26b788] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [aa0f9fdd] Running [ -f /home/deploy/apps/shared/tmp/pids/puma.pid ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [aa0f9fdd] Command: [ -f /home/deploy/apps/shared/tmp/pids/puma.pid ]
+ DEBUG [aa0f9fdd] Finished in 0.194 seconds with exit status 0 (successful).
+ DEBUG [6abd0d7d] Running /usr/bin/env kill -0 $( cat /home/deploy/apps/shared/tmp/pids/puma.pid ) as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6abd0d7d] Command: cd /home/deploy/apps/current && ( export RACK_ENV="production" ; /usr/bin/env kill -0 $( cat /home/deploy/apps/shared/tmp/pids/puma.pid ) )
+ DEBUG [6abd0d7d] Finished in 0.247 seconds with exit status 0 (successful).
+  INFO [d161a24d] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec pumactl -S /home/deploy/apps/shared/tmp/pids/puma.state -F /home/deploy/apps/shared/puma.rb restart as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d161a24d] Command: cd /home/deploy/apps/current && ( export RACK_ENV="production" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec pumactl -S /home/deploy/apps/shared/tmp/pids/puma.state -F /home/deploy/apps/shared/puma.rb restart )
+ DEBUG [d161a24d] 	Command restart sent success
+  INFO [d161a24d] Finished in 0.579 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-24 19:21:12 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b84e30fb] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b84e30fb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b84e30fb] Finished in 1.333 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [68b2711b] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [68b2711b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh
+  INFO [68b2711b] Finished in 0.198 seconds with exit status 0 (successful).
+  INFO [cdd539ce] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cdd539ce] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [cdd539ce] 	Warning: Permanently added the RSA host key for IP address '140.82.113.3' to the list of known hosts.
+ DEBUG [cdd539ce] 	7a970b7630b53681542317a94237bd81b18861ba	HEAD
+  INFO [cdd539ce] Finished in 0.587 seconds with exit status 0 (successful).
+  INFO [b1e0e55a] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b1e0e55a] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases
+  INFO [b1e0e55a] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [42ab31bb] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [42ab31bb] Command: /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets
+  INFO [42ab31bb] Finished in 0.197 seconds with exit status 0 (successful).
+ DEBUG [8c2a875a] Running [ -f /home/deploy/apps/shared/puma.rb ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8c2a875a] Command: [ -f /home/deploy/apps/shared/puma.rb ]
+ DEBUG [8c2a875a] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG [203a5727] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [203a5727] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [203a5727] Finished in 0.188 seconds with exit status 0 (successful).
+ DEBUG [77b8aeac] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [77b8aeac] Command: /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null
+ DEBUG [77b8aeac] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [77b8aeac] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG [a4d4c6cb] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a4d4c6cb] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [a4d4c6cb] Finished in 0.203 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [ab4ad0d3] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ab4ad0d3] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [ab4ad0d3] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [38196bb1] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [38196bb1] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [38196bb1] Finished in 0.193 seconds with exit status 0 (successful).
+  INFO [c297e2ef] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c297e2ef] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [c297e2ef] 	Fetching origin
+  INFO [c297e2ef] Finished in 0.595 seconds with exit status 0 (successful).
+ DEBUG [df013d00] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [df013d00] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [df013d00] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [22a7ce24] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424232116 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [22a7ce24] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424232116 )
+  INFO [22a7ce24] Finished in 0.203 seconds with exit status 0 (successful).
+  INFO [885f3b91] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424232116 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [885f3b91] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200424232116 )
+  INFO [885f3b91] Finished in 0.429 seconds with exit status 0 (successful).
+ DEBUG [bb2580a5] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bb2580a5] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [bb2580a5] Finished in 0.193 seconds with exit status 0 (successful).
+ DEBUG [04c470d1] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [04c470d1] Command: cd /home/deploy/apps/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [04c470d1] 	7a970b7630b53681542317a94237bd81b18861ba
+ DEBUG [04c470d1] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [84d186d5] Running if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [84d186d5] Command: if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi
+ DEBUG [84d186d5] Finished in 0.195 seconds with exit status 0 (successful).
+  INFO [01f63d29] Running /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [01f63d29] Command: cd /home/deploy/apps/releases/20200424232116 && /usr/bin/env echo "7a970b7630b53681542317a94237bd81b18861ba" > REVISION
+  INFO [01f63d29] Finished in 0.228 seconds with exit status 0 (successful).
+  INFO [4f0cd1cb] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424232116 /home/deploy/apps/releases/20200424232116/tmp /home/deploy/apps/releases/20200424232116/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4f0cd1cb] Command: /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424232116 /home/deploy/apps/releases/20200424232116/tmp /home/deploy/apps/releases/20200424232116/public
+  INFO [4f0cd1cb] Finished in 0.229 seconds with exit status 0 (successful).
+ DEBUG [ad109dbc] Running [ -L /home/deploy/apps/releases/20200424232116/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ad109dbc] Command: [ -L /home/deploy/apps/releases/20200424232116/log ]
+ DEBUG [ad109dbc] Finished in 0.237 seconds with exit status 1 (failed).
+ DEBUG [db67e991] Running [ -d /home/deploy/apps/releases/20200424232116/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [db67e991] Command: [ -d /home/deploy/apps/releases/20200424232116/log ]
+ DEBUG [db67e991] Finished in 0.197 seconds with exit status 0 (successful).
+  INFO [6c2c707d] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424232116/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6c2c707d] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424232116/log
+  INFO [6c2c707d] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [fb92454d] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424232116/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fb92454d] Command: /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200424232116/log
+  INFO [fb92454d] Finished in 0.189 seconds with exit status 0 (successful).
+ DEBUG [5bdcdf90] Running [ -L /home/deploy/apps/releases/20200424232116/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5bdcdf90] Command: [ -L /home/deploy/apps/releases/20200424232116/tmp/pids ]
+ DEBUG [5bdcdf90] Finished in 0.234 seconds with exit status 1 (failed).
+ DEBUG [2eef1aa3] Running [ -d /home/deploy/apps/releases/20200424232116/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2eef1aa3] Command: [ -d /home/deploy/apps/releases/20200424232116/tmp/pids ]
+ DEBUG [2eef1aa3] Finished in 0.190 seconds with exit status 1 (failed).
+  INFO [802ce1f7] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424232116/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [802ce1f7] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200424232116/tmp/pids
+  INFO [802ce1f7] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [09805547] Running [ -L /home/deploy/apps/releases/20200424232116/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [09805547] Command: [ -L /home/deploy/apps/releases/20200424232116/tmp/cache ]
+ DEBUG [09805547] Finished in 0.195 seconds with exit status 1 (failed).
+ DEBUG [3a5bd528] Running [ -d /home/deploy/apps/releases/20200424232116/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3a5bd528] Command: [ -d /home/deploy/apps/releases/20200424232116/tmp/cache ]
+ DEBUG [3a5bd528] Finished in 0.431 seconds with exit status 0 (successful).
+  INFO [728e54f6] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424232116/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [728e54f6] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424232116/tmp/cache
+  INFO [728e54f6] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [ab82353e] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424232116/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ab82353e] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200424232116/tmp/cache
+  INFO [ab82353e] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG [74b0ba18] Running [ -L /home/deploy/apps/releases/20200424232116/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [74b0ba18] Command: [ -L /home/deploy/apps/releases/20200424232116/tmp/sockets ]
+ DEBUG [74b0ba18] Finished in 0.194 seconds with exit status 1 (failed).
+ DEBUG [98b9a6bf] Running [ -d /home/deploy/apps/releases/20200424232116/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [98b9a6bf] Command: [ -d /home/deploy/apps/releases/20200424232116/tmp/sockets ]
+ DEBUG [98b9a6bf] Finished in 0.234 seconds with exit status 1 (failed).
+  INFO [74491d96] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424232116/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [74491d96] Command: /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200424232116/tmp/sockets
+  INFO [74491d96] Finished in 0.192 seconds with exit status 0 (successful).
+ DEBUG [5cad47bf] Running [ -L /home/deploy/apps/releases/20200424232116/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5cad47bf] Command: [ -L /home/deploy/apps/releases/20200424232116/public/assets ]
+ DEBUG [5cad47bf] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [b531ce67] Running [ -d /home/deploy/apps/releases/20200424232116/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b531ce67] Command: [ -d /home/deploy/apps/releases/20200424232116/public/assets ]
+ DEBUG [b531ce67] Finished in 0.202 seconds with exit status 1 (failed).
+  INFO [0d4e263c] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424232116/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0d4e263c] Command: /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200424232116/public/assets
+  INFO [0d4e263c] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG [1fb94e2a] Running if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1fb94e2a] Command: if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi
+ DEBUG [1fb94e2a] Finished in 0.197 seconds with exit status 0 (successful).
+ DEBUG [bc8c5fa0] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bc8c5fa0] Command: cd /home/deploy/apps/releases/20200424232116 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle check --path /home/deploy/apps/shared/bundle
+ DEBUG [bc8c5fa0] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [bc8c5fa0] 	The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+ DEBUG [bc8c5fa0] 	The following gems are missing
+ DEBUG [bc8c5fa0] 	 * public_suffix (4.0.4)
+ DEBUG [bc8c5fa0] 	 * addressable (2.7.0)
+ DEBUG [bc8c5fa0] 	 * io-like (0.3.1)
+ DEBUG [bc8c5fa0] 	 * archive-zip (0.12.0)
+ DEBUG [bc8c5fa0] 	 * bindex (0.8.1)
+ DEBUG [bc8c5fa0] 	 * byebug (11.1.3)
+ DEBUG [bc8c5fa0] 	 * regexp_parser (1.7.0)
+ DEBUG [bc8c5fa0] 	 * xpath (3.2.0)
+ DEBUG [bc8c5fa0] 	 * capybara (3.32.1)
+ DEBUG [bc8c5fa0] 	 * childprocess (3.0.0)
+ DEBUG [bc8c5fa0] 	 * chromedriver-helper (2.1.1)
+ DEBUG [bc8c5fa0] 	 * ruby_dep (1.5.0)
+ DEBUG [bc8c5fa0] 	 * listen (3.1.5)
+ DEBUG [bc8c5fa0] 	 * rubyzip (2.3.0)
+ DEBUG [bc8c5fa0] 	 * selenium-webdriver (3.142.7)
+ DEBUG [bc8c5fa0] 	 * spring (2.1.0)
+ DEBUG [bc8c5fa0] 	 * spring-watcher-listen (2.0.1)
+ DEBUG [bc8c5fa0] 	 * web-console (3.7.0)
+ DEBUG [bc8c5fa0] 	Install missing gems with `bundle install`
+ DEBUG [bc8c5fa0] Finished in 0.568 seconds with exit status 1 (failed).
+  INFO [ac31f700] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ac31f700] Command: cd /home/deploy/apps/releases/20200424232116 && /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet
+ DEBUG [ac31f700] 	[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag
+ DEBUG [ac31f700] 	[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag
+ DEBUG [ac31f700] 	[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag
+  INFO [ac31f700] Finished in 0.559 seconds with exit status 0 (successful).
+ DEBUG [4fb8162b] Running if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4fb8162b] Command: if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi
+ DEBUG [4fb8162b] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [7d56993a] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7d56993a] Command: cd /home/deploy/apps/releases/20200424232116 && ( export RAILS_ENV="production" RAILS_GROUPS="" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake assets:precompile )
+ DEBUG [7d56993a] 	Yarn executable was not detected in the system.
+ DEBUG [7d56993a] 	
+ DEBUG [7d56993a] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [7d56993a] 	
+  INFO [7d56993a] Finished in 1.199 seconds with exit status 0 (successful).
+ DEBUG [9897f0ad] Running if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9897f0ad] Command: if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi
+ DEBUG [9897f0ad] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [15004171] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424232116/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [15004171] Command: cd /home/deploy/apps/releases/20200424232116 && /usr/bin/env mkdir -p /home/deploy/apps/releases/20200424232116/assets_manifest_backup
+  INFO [15004171] Finished in 0.190 seconds with exit status 0 (successful).
+ DEBUG [0502cd62] Running /usr/bin/env ls /home/deploy/apps/releases/20200424232116/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0502cd62] Command: cd /home/deploy/apps/releases/20200424232116 && /usr/bin/env ls /home/deploy/apps/releases/20200424232116/public/assets/.sprockets-manifest*
+ DEBUG [0502cd62] 	/home/deploy/apps/releases/20200424232116/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [0502cd62] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [f7b41ba8] Running /usr/bin/env ls /home/deploy/apps/releases/20200424232116/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f7b41ba8] Command: cd /home/deploy/apps/releases/20200424232116 && /usr/bin/env ls /home/deploy/apps/releases/20200424232116/public/assets/.sprockets-manifest*
+ DEBUG [f7b41ba8] 	/home/deploy/apps/releases/20200424232116/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json
+ DEBUG [f7b41ba8] Finished in 0.189 seconds with exit status 0 (successful).
+  INFO [e8e7903a] Running /usr/bin/env cp /home/deploy/apps/releases/20200424232116/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424232116/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e8e7903a] Command: cd /home/deploy/apps/releases/20200424232116 && /usr/bin/env cp /home/deploy/apps/releases/20200424232116/public/assets/.sprockets-manifest-8ae85a5e84bc54e6d6187147496eb5f2.json /home/deploy/apps/releases/20200424232116/assets_manifest_backup
+  INFO [e8e7903a] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [deploy:migrate] Run `rake db:migrate`
+ DEBUG [40221f23] Running if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [40221f23] Command: if test ! -d /home/deploy/apps/releases/20200424232116; then echo "Directory does not exist '/home/deploy/apps/releases/20200424232116'" 1>&2; false; fi
+ DEBUG [40221f23] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [06874d68] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [06874d68] Command: cd /home/deploy/apps/releases/20200424232116 && ( export RAILS_ENV="production" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec rake db:migrate )
+ DEBUG [06874d68] 	== 20200424201919 CreateReasons: migrating ====================================
+-- create_table(:reasons)
+   -> 0.0005s
+== 20200424201919 CreateReasons: migrated (0.0005s) ===========================
+
+  INFO [06874d68] Finished in 1.053 seconds with exit status 0 (successful).
+  INFO [88ff10d2] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200424232116 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [88ff10d2] Command: /usr/bin/env ln -s /home/deploy/apps/releases/20200424232116 /home/deploy/apps/releases/current
+  INFO [88ff10d2] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [ada642a0] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ada642a0] Command: /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps
+  INFO [ada642a0] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG [8c895df6] Running /usr/bin/env ls -x /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8c895df6] Command: /usr/bin/env ls -x /home/deploy/apps/releases
+ DEBUG [8c895df6] 	20200424205504	20200424215635	20200424230159	20200424230410	20200424231104
+20200424232116
+ DEBUG [8c895df6] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8e56a618] Running [ -d /home/deploy/apps/current ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8e56a618] Command: [ -d /home/deploy/apps/current ]
+ DEBUG [8e56a618] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [793797bd] Running /usr/bin/env readlink /home/deploy/apps/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [793797bd] Command: /usr/bin/env readlink /home/deploy/apps/current
+ DEBUG [793797bd] 	/home/deploy/apps/releases/20200424232116
+ DEBUG [793797bd] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [66f4e6d2] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200424205504 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [66f4e6d2] Command: /usr/bin/env rm -rf /home/deploy/apps/releases/20200424205504
+  INFO [66f4e6d2] Finished in 0.262 seconds with exit status 0 (successful).
+ DEBUG [cb40b02f] Running if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cb40b02f] Command: if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi
+ DEBUG [cb40b02f] Finished in 0.194 seconds with exit status 0 (successful).
+  INFO [9fd940ff] Running /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424232116 by jarp" >> /home/deploy/apps/revisions.log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9fd940ff] Command: cd /home/deploy/apps/releases && /usr/bin/env echo "Branch master (at 7a970b7630b53681542317a94237bd81b18861ba) deployed as release 20200424232116 by jarp" >> /home/deploy/apps/revisions.log
+  INFO [9fd940ff] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG [e2de5f65] Running if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e2de5f65] Command: if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi
+ DEBUG [e2de5f65] Finished in 0.191 seconds with exit status 0 (successful).
+ DEBUG [dc355cf0] Running [ -f /home/deploy/apps/shared/tmp/pids/puma.pid ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [dc355cf0] Command: [ -f /home/deploy/apps/shared/tmp/pids/puma.pid ]
+ DEBUG [dc355cf0] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [5b3d37a8] Running /usr/bin/env kill -0 $( cat /home/deploy/apps/shared/tmp/pids/puma.pid ) as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5b3d37a8] Command: cd /home/deploy/apps/current && ( export RACK_ENV="production" ; /usr/bin/env kill -0 $( cat /home/deploy/apps/shared/tmp/pids/puma.pid ) )
+ DEBUG [5b3d37a8] Finished in 0.193 seconds with exit status 0 (successful).
+  INFO [b741007c] Running /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec pumactl -S /home/deploy/apps/shared/tmp/pids/puma.state -F /home/deploy/apps/shared/puma.rb restart as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b741007c] Command: cd /home/deploy/apps/current && ( export RACK_ENV="production" ; /usr/local/bin/chruby-exec ruby-2.4.6 -- bundle exec pumactl -S /home/deploy/apps/shared/tmp/pids/puma.state -F /home/deploy/apps/shared/puma.rb restart )
+ DEBUG [b741007c] 	Command restart sent success
+  INFO [b741007c] Finished in 0.625 seconds with exit status 0 (successful).
