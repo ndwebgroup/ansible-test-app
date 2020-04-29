@@ -1,14 +1,24 @@
-# server-based syntax
-# ======================
-# Defines a single server with a list of roles and multiple properties.
-# You can define all roles on a single server, or split them:
-
-# server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
-# server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
-# server "db.example.com", user: "deploy", roles: %w{db}
 
 
-server "ec2-3-225-20-143.compute-1.amazonaws.com", user: "deploy", roles: %w(web app db)
+
+
+
+
+
+
+server "ec2-3-225-20-143.compute-1.amazonaws.com", user: "deploy" , roles: %w(web app)
+
+set :rails_env, "production"
+set :user, "deploy"
+set :use_sudo, false
+
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.4.6'
+
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, %w(web app)
+
 
 # role-based syntax
 # ==================
@@ -47,7 +57,14 @@ server "ec2-3-225-20-143.compute-1.amazonaws.com", user: "deploy", roles: %w(web
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
-#
+
+# default_run_options[:pty] = true
+set :ssh_options, {
+  :forward_agent => true,
+  :auth_methods => ["publickey"]
+}
+
+
 # The server-based syntax can be used to override options:
 # ------------------------------------
 # server "example.com",

@@ -2,6 +2,12 @@
 lock "~> 3.13.0"
 
 
+#### Things to add?
+
+# load 'config/deploy/recipes/apache'
+
+
+
 # config/deploy.rb
 
 set :application, "my_app_name"
@@ -9,6 +15,8 @@ set :repo_url, "git@github.com:ndwebgroup/ansible-test-app.git"
 set :deploy_to, "/home/deploy/apps"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
 
+
+set :passenger_in_gemfile, true
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

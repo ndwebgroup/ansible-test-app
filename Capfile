@@ -16,15 +16,10 @@ require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
 set :chruby_ruby, 'ruby-2.4.6'
-
-require "capistrano/chruby"
 require "capistrano/bundler"
 require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
-# require "capistrano/passenger"
-
-require 'capistrano/puma'
-install_plugin Capistrano::Puma
+require "capistrano/passenger"
 
 # Include tasks from other gems included in your Gemfile
 #
@@ -38,7 +33,7 @@ install_plugin Capistrano::Puma
 #   https://github.com/capistrano/passenger
 #
 # require "capistrano/rvm"
-# require "capistrano/rbenv"
+require "capistrano/rbenv"
 # require "capistrano/chruby"
 # require "capistrano/bundler"
 # require "capistrano/rails/assets"
