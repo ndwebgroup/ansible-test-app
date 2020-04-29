@@ -7384,3 +7384,2223 @@
  DEBUG [bd3c3627] Command: cd /home/deploy/apps/releases/20200429171530 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; bundle exec passenger -v )
  DEBUG [bd3c3627] 	[33m[31mYour Ruby version is 2.5.1, but your Gemfile specified 2.4.6[0m[0m
  DEBUG [bd3c3627] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 13:34:28 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [ef786037] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ef786037] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [ef786037] Finished in 1.505 seconds with exit status 0 (successful).
+ DEBUG [b11ccf0d] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b11ccf0d] Command: /usr/bin/env which passenger
+ DEBUG [b11ccf0d] 	/usr/bin/passenger
+ DEBUG [b11ccf0d] 	
+ DEBUG [b11ccf0d] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [5c2bcd2b] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5c2bcd2b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /tmp )
+  INFO [5c2bcd2b] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [c78576c4] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c78576c4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh )
+  INFO [c78576c4] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [b69bd38b] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b69bd38b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [b69bd38b] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1	HEAD
+  INFO [b69bd38b] Finished in 0.642 seconds with exit status 0 (successful).
+  INFO [0e2e4f17] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0e2e4f17] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases )
+  INFO [0e2e4f17] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [efdceabf] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [efdceabf] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets )
+  INFO [efdceabf] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [11f8603e] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [11f8603e] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [11f8603e] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [01d97ab0] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [01d97ab0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null )
+ DEBUG [01d97ab0] 	23e1005c70de8afc4d277a6259d11f11cf03d384
+ DEBUG [01d97ab0] 	
+ DEBUG [01d97ab0] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [7a5d8f43] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7a5d8f43] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [7a5d8f43] Finished in 0.227 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [4bfdfcff] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4bfdfcff] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [4bfdfcff] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [faeadc84] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [faeadc84] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [faeadc84] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [a7017731] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a7017731] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [a7017731] 	Fetching origin
+ DEBUG [a7017731] 	
+ DEBUG [a7017731] 	remote: Enumerating objects: 25, done.[K
+ DEBUG [a7017731] 	
+ DEBUG [a7017731] 	remote: Counting objects:   4% (1/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:   8% (2/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  12% (3/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  16% (4/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  20% (5/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  24% (6/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  28% (7/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  32% (8/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  36% (9/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  40% (10/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  44% (11/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  48% (12/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  52% (13/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  56% (14/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  60% (15/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  64% (16/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  68% (17/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  72% (18/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  76% (19/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  80% (20/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  84% (21/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  88% (22/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  92% (23/25)[K
+ DEBUG [a7017731] 	remote: Counting objects:  96% (24/25)[K
+ DEBUG [a7017731] 	remote: Counting objects: 100% (25/25)[K
+ DEBUG [a7017731] 	remote: Counting objects: 100% (25/25), done.[K
+ DEBUG [a7017731] 	
+ DEBUG [a7017731] 	remote: Compressing objects:  14% (1/7)[K
+ DEBUG [a7017731] 	remote: Compressing objects:  28% (2/7)[K
+ DEBUG [a7017731] 	remote: Compressing objects:  42% (3/7)[K
+ DEBUG [a7017731] 	remote: Compressing objects:  57% (4/7)[K
+ DEBUG [a7017731] 	remote: Compressing objects:  71% (5/7)[K
+ DEBUG [a7017731] 	remote: Compressing objects:  85% (6/7)[K
+ DEBUG [a7017731] 	remote: Compressing objects: 100% (7/7)[K
+ DEBUG [a7017731] 	remote: Compressing objects: 100% (7/7), done.[K
+ DEBUG [a7017731] 	
+ DEBUG [a7017731] 	remote: Total 18 (delta 11), reused 18 (delta 11), pack-reused 0[K
+ DEBUG [a7017731] 	
+ DEBUG [a7017731] 	Unpacking objects:   5% (1/18)   
+ DEBUG [a7017731] 	Unpacking objects:  11% (2/18)   
+ DEBUG [a7017731] 	Unpacking objects:  16% (3/18)   
+ DEBUG [a7017731] 	Unpacking objects:  22% (4/18)   
+ DEBUG [a7017731] 	Unpacking objects:  27% (5/18)   
+ DEBUG [a7017731] 	Unpacking objects:  33% (6/18)   
+ DEBUG [a7017731] 	Unpacking objects:  38% (7/18)   
+ DEBUG [a7017731] 	Unpacking objects:  44% (8/18)   
+ DEBUG [a7017731] 	Unpacking objects:  50% (9/18)   
+ DEBUG [a7017731] 	Unpacking objects:  55% (10/18)   
+ DEBUG [a7017731] 	Unpacking objects:  61% (11/18)   
+ DEBUG [a7017731] 	Unpacking objects:  66% (12/18)   
+ DEBUG [a7017731] 	Unpacking objects:  72% (13/18)   
+ DEBUG [a7017731] 	Unpacking objects:  77% (14/18)   
+ DEBUG [a7017731] 	Unpacking objects:  83% (15/18)   
+ DEBUG [a7017731] 	Unpacking objects:  88% (16/18)   
+ DEBUG [a7017731] 	Unpacking objects:  94% (17/18)   
+ DEBUG [a7017731] 	Unpacking objects: 100% (18/18)   
+ DEBUG [a7017731] 	Unpacking objects: 100% (18/18), done.
+ DEBUG [a7017731] 	
+ DEBUG [a7017731] 	From github.com:ndwebgroup/ansible-test-app
+ DEBUG [a7017731] 	
+ DEBUG [a7017731] 	   23e1005..7405093  master     -> master
+ DEBUG [a7017731] 	
+  INFO [a7017731] Finished in 0.706 seconds with exit status 0 (successful).
+ DEBUG [ba502510] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ba502510] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [ba502510] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [bc487ed4] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429173433 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bc487ed4] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429173433 )
+  INFO [bc487ed4] Finished in 0.258 seconds with exit status 0 (successful).
+  INFO [30f7680c] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429173433 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [30f7680c] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429173433 )
+  INFO [30f7680c] Finished in 0.573 seconds with exit status 0 (successful).
+ DEBUG [43683a1d] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [43683a1d] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [43683a1d] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [1910c17b] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1910c17b] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1910c17b] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [1910c17b] 	
+ DEBUG [1910c17b] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [c6079a32] Running if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c6079a32] Command: if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi
+ DEBUG [c6079a32] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [af82084f] Running /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [af82084f] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION )
+  INFO [af82084f] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [62662757] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429173433 /home/deploy/apps/releases/20200429173433/tmp /home/deploy/apps/releases/20200429173433/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [62662757] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429173433 /home/deploy/apps/releases/20200429173433/tmp /home/deploy/apps/releases/20200429173433/public )
+  INFO [62662757] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [02df2dc3] Running [ -L /home/deploy/apps/releases/20200429173433/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [02df2dc3] Command: [ -L /home/deploy/apps/releases/20200429173433/log ]
+ DEBUG [02df2dc3] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [df241ede] Running [ -d /home/deploy/apps/releases/20200429173433/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [df241ede] Command: [ -d /home/deploy/apps/releases/20200429173433/log ]
+ DEBUG [df241ede] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [27454983] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429173433/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [27454983] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429173433/log )
+  INFO [27454983] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [6b3b2ec2] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429173433/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6b3b2ec2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429173433/log )
+  INFO [6b3b2ec2] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [cc131890] Running [ -L /home/deploy/apps/releases/20200429173433/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cc131890] Command: [ -L /home/deploy/apps/releases/20200429173433/tmp/pids ]
+ DEBUG [cc131890] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [f0ee6a1e] Running [ -d /home/deploy/apps/releases/20200429173433/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f0ee6a1e] Command: [ -d /home/deploy/apps/releases/20200429173433/tmp/pids ]
+ DEBUG [f0ee6a1e] Finished in 0.232 seconds with exit status 1 (failed).
+  INFO [0f11865a] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429173433/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0f11865a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429173433/tmp/pids )
+  INFO [0f11865a] Finished in 0.240 seconds with exit status 0 (successful).
+ DEBUG [3b8c8e41] Running [ -L /home/deploy/apps/releases/20200429173433/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3b8c8e41] Command: [ -L /home/deploy/apps/releases/20200429173433/tmp/cache ]
+ DEBUG [3b8c8e41] Finished in 0.247 seconds with exit status 1 (failed).
+ DEBUG [9200d331] Running [ -d /home/deploy/apps/releases/20200429173433/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9200d331] Command: [ -d /home/deploy/apps/releases/20200429173433/tmp/cache ]
+ DEBUG [9200d331] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [44a51388] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429173433/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [44a51388] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429173433/tmp/cache )
+  INFO [44a51388] Finished in 0.265 seconds with exit status 0 (successful).
+  INFO [86337a27] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429173433/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [86337a27] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429173433/tmp/cache )
+  INFO [86337a27] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG [19831210] Running [ -L /home/deploy/apps/releases/20200429173433/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [19831210] Command: [ -L /home/deploy/apps/releases/20200429173433/tmp/sockets ]
+ DEBUG [19831210] Finished in 0.228 seconds with exit status 1 (failed).
+ DEBUG [352d4f59] Running [ -d /home/deploy/apps/releases/20200429173433/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [352d4f59] Command: [ -d /home/deploy/apps/releases/20200429173433/tmp/sockets ]
+ DEBUG [352d4f59] Finished in 0.231 seconds with exit status 1 (failed).
+  INFO [7ced0c4b] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429173433/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7ced0c4b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429173433/tmp/sockets )
+  INFO [7ced0c4b] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG [1fb9acff] Running [ -L /home/deploy/apps/releases/20200429173433/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1fb9acff] Command: [ -L /home/deploy/apps/releases/20200429173433/public/assets ]
+ DEBUG [1fb9acff] Finished in 0.237 seconds with exit status 1 (failed).
+ DEBUG [094017f3] Running [ -d /home/deploy/apps/releases/20200429173433/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [094017f3] Command: [ -d /home/deploy/apps/releases/20200429173433/public/assets ]
+ DEBUG [094017f3] Finished in 0.239 seconds with exit status 1 (failed).
+  INFO [3ac9384a] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429173433/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3ac9384a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429173433/public/assets )
+  INFO [3ac9384a] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG [4282246a] Running if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4282246a] Command: if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi
+ DEBUG [4282246a] Finished in 0.228 seconds with exit status 0 (successful).
+ DEBUG [c510b476] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c510b476] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/apps/shared/bundle )
+ DEBUG [c510b476] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31mThe following gems are missing[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * public_suffix (4.0.4)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * addressable (2.7.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * net-ssh (6.0.2)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * net-scp (3.0.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * sshkit (1.21.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * io-like (0.3.1)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * archive-zip (0.12.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * bindex (0.8.1)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * byebug (11.1.3)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * capistrano (3.13.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * capistrano-passenger (0.2.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * capistrano-rbenv (2.1.6)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * regexp_parser (1.7.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * xpath (3.2.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * capybara (3.32.1)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * chromedriver-helper (2.1.1)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * ruby_dep (1.5.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * listen (3.1.5)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * rubyzip (2.3.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * spring (2.1.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * spring-watcher-listen (2.0.1)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[31m * web-console (3.7.0)[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [c510b476] 	
+ DEBUG [c510b476] Finished in 0.607 seconds with exit status 1 (failed).
+  INFO [fd92653e] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fd92653e] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet )
+ DEBUG [fd92653e] 	[33m[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag[0m
+ DEBUG [fd92653e] 	
+ DEBUG [fd92653e] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag[0m
+ DEBUG [fd92653e] 	
+ DEBUG [fd92653e] 	[33m[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag[0m
+ DEBUG [fd92653e] 	
+  INFO [fd92653e] Finished in 0.647 seconds with exit status 0 (successful).
+ DEBUG [fee2afb1] Running if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fee2afb1] Command: if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi
+ DEBUG [fee2afb1] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [fd8b2828] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fd8b2828] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" RAILS_ENV="production" RAILS_GROUPS="" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [fd8b2828] 	Yarn executable was not detected in the system.
+ DEBUG [fd8b2828] 	
+ DEBUG [fd8b2828] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [fd8b2828] 	
+  INFO [fd8b2828] Finished in 2.214 seconds with exit status 0 (successful).
+ DEBUG [f563f7ce] Running if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f563f7ce] Command: if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi
+ DEBUG [f563f7ce] Finished in 0.228 seconds with exit status 0 (successful).
+  INFO [82dbdc7c] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429173433/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [82dbdc7c] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429173433/assets_manifest_backup )
+  INFO [82dbdc7c] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [c30b7521] Running /usr/bin/env ls /home/deploy/apps/releases/20200429173433/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c30b7521] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429173433/public/assets/.sprockets-manifest* )
+ DEBUG [c30b7521] 	/home/deploy/apps/releases/20200429173433/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [c30b7521] 	
+ DEBUG [c30b7521] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [a81efcc9] Running /usr/bin/env ls /home/deploy/apps/releases/20200429173433/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a81efcc9] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429173433/public/assets/.sprockets-manifest* )
+ DEBUG [a81efcc9] 	/home/deploy/apps/releases/20200429173433/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [a81efcc9] 	
+ DEBUG [a81efcc9] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [3401ad9d] Running /usr/bin/env cp /home/deploy/apps/releases/20200429173433/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429173433/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3401ad9d] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cp /home/deploy/apps/releases/20200429173433/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429173433/assets_manifest_backup )
+  INFO [3401ad9d] Finished in 0.230 seconds with exit status 0 (successful).
+  INFO [0ba656a8] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200429173433 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0ba656a8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/releases/20200429173433 /home/deploy/apps/releases/current )
+  INFO [0ba656a8] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [17f3a5ee] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [17f3a5ee] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps )
+  INFO [17f3a5ee] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [1bdaacfb] Running if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1bdaacfb] Command: if test ! -d /home/deploy/apps/releases/20200429173433; then echo "Directory does not exist '/home/deploy/apps/releases/20200429173433'" 1>&2; false; fi
+ DEBUG [1bdaacfb] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [e4e6180b] Running bundle exec passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e4e6180b] Command: cd /home/deploy/apps/releases/20200429173433 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; bundle exec passenger -v )
+ DEBUG [e4e6180b] 	[1mTraceback[m (most recent call last):
+ DEBUG [e4e6180b] 	
+ DEBUG [e4e6180b] 		
+ DEBUG [e4e6180b] 	2: from /usr/local/bin/bundle:23:in `<main>'
+ DEBUG [e4e6180b] 	
+ DEBUG [e4e6180b] 		
+ DEBUG [e4e6180b] 	1: from /usr/lib/ruby/2.5.0/rubygems.rb:308:in `activate_bin_path'
+ DEBUG [e4e6180b] 	
+ DEBUG [e4e6180b] 	/usr/lib/ruby/2.5.0/rubygems.rb:289:in `find_spec_for_exe'
+ DEBUG [e4e6180b] 	: 
+ DEBUG [e4e6180b] 	[1m
+ DEBUG [e4e6180b] 	can't find gem bundler (>= 0.a) with executable bundle
+ DEBUG [e4e6180b] 	 (
+ DEBUG [e4e6180b] 	[1;4m
+ DEBUG [e4e6180b] 	Gem::GemNotFoundException
+ DEBUG [e4e6180b] 	[m
+ DEBUG [e4e6180b] 	[1m
+ DEBUG [e4e6180b] 	)
+ DEBUG [e4e6180b] 	
+ DEBUG [e4e6180b] 	[m
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 13:39:23 -0400 cap production passenger:restart
+  INFO ---------------------------------------------------------------------------
+ DEBUG [eeeb3eb5] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [eeeb3eb5] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [eeeb3eb5] Finished in 1.358 seconds with exit status 0 (successful).
+ DEBUG [38d2a59d] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [38d2a59d] Command: /usr/bin/env which passenger
+ DEBUG [38d2a59d] 	/usr/bin/passenger
+ DEBUG [38d2a59d] 	
+ DEBUG [38d2a59d] Finished in 0.271 seconds with exit status 0 (successful).
+ DEBUG [d0ca3a2f] Running if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d0ca3a2f] Command: if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi
+ DEBUG [d0ca3a2f] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [e7034184] Running bundle exec passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e7034184] Command: cd /home/deploy/apps/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; bundle exec passenger -v )
+ DEBUG [e7034184] 	[1mTraceback[m (most recent call last):
+ DEBUG [e7034184] 	
+ DEBUG [e7034184] 		
+ DEBUG [e7034184] 	2: from /usr/local/bin/bundle:23:in `<main>'
+ DEBUG [e7034184] 	
+ DEBUG [e7034184] 		
+ DEBUG [e7034184] 	1: from /usr/lib/ruby/2.5.0/rubygems.rb:308:in `activate_bin_path'
+ DEBUG [e7034184] 	
+ DEBUG [e7034184] 	/usr/lib/ruby/2.5.0/rubygems.rb:289:in `find_spec_for_exe'
+ DEBUG [e7034184] 	: 
+ DEBUG [e7034184] 	[1m
+ DEBUG [e7034184] 	can't find gem bundler (>= 0.a) with executable bundle
+ DEBUG [e7034184] 	 (
+ DEBUG [e7034184] 	[1;4m
+ DEBUG [e7034184] 	Gem::GemNotFoundException
+ DEBUG [e7034184] 	[m
+ DEBUG [e7034184] 	[1m
+ DEBUG [e7034184] 	)
+ DEBUG [e7034184] 	
+ DEBUG [e7034184] 	[m
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 14:21:20 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [c16b3c6f] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c16b3c6f] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [c16b3c6f] Finished in 1.920 seconds with exit status 0 (successful).
+ DEBUG [153e082c] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [153e082c] Command: /usr/bin/env which passenger
+ DEBUG [153e082c] 	/usr/bin/passenger
+ DEBUG [153e082c] 	
+ DEBUG [153e082c] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [599070bc] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [599070bc] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /tmp )
+  INFO [599070bc] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [58543d65] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [58543d65] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh )
+  INFO [58543d65] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [c38bfe79] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c38bfe79] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [c38bfe79] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1	HEAD
+  INFO [c38bfe79] Finished in 0.667 seconds with exit status 0 (successful).
+  INFO [7ae7aeaf] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7ae7aeaf] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases )
+  INFO [7ae7aeaf] Finished in 0.197 seconds with exit status 0 (successful).
+  INFO [1c16fa2b] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1c16fa2b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets )
+  INFO [1c16fa2b] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG [c74ce02c] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c74ce02c] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [c74ce02c] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG [0cc34b80] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0cc34b80] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null )
+ DEBUG [0cc34b80] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [0cc34b80] 	
+ DEBUG [0cc34b80] Finished in 0.242 seconds with exit status 0 (successful).
+ DEBUG [991f3276] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [991f3276] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [991f3276] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [451a8120] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [451a8120] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [451a8120] Finished in 0.226 seconds with exit status 0 (successful).
+  INFO [0cee7d99] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0cee7d99] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [0cee7d99] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [8085e6df] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8085e6df] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8085e6df] 	Fetching origin
+ DEBUG [8085e6df] 	
+  INFO [8085e6df] Finished in 0.665 seconds with exit status 0 (successful).
+ DEBUG [0f63069b] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0f63069b] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [0f63069b] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [99266e90] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429182125 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [99266e90] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429182125 )
+  INFO [99266e90] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [1b0bd0af] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429182125 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1b0bd0af] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429182125 )
+  INFO [1b0bd0af] Finished in 0.573 seconds with exit status 0 (successful).
+ DEBUG [4fbfb6fa] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4fbfb6fa] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [4fbfb6fa] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [098e6af5] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [098e6af5] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [098e6af5] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [098e6af5] 	
+ DEBUG [098e6af5] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [691719af] Running if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [691719af] Command: if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi
+ DEBUG [691719af] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [f8a776e1] Running /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f8a776e1] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION )
+  INFO [f8a776e1] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [db733e85] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429182125 /home/deploy/apps/releases/20200429182125/tmp /home/deploy/apps/releases/20200429182125/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [db733e85] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429182125 /home/deploy/apps/releases/20200429182125/tmp /home/deploy/apps/releases/20200429182125/public )
+  INFO [db733e85] Finished in 0.248 seconds with exit status 0 (successful).
+ DEBUG [f8650f17] Running [ -L /home/deploy/apps/releases/20200429182125/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f8650f17] Command: [ -L /home/deploy/apps/releases/20200429182125/log ]
+ DEBUG [f8650f17] Finished in 0.235 seconds with exit status 1 (failed).
+ DEBUG [226854f7] Running [ -d /home/deploy/apps/releases/20200429182125/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [226854f7] Command: [ -d /home/deploy/apps/releases/20200429182125/log ]
+ DEBUG [226854f7] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [8d9fca21] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429182125/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8d9fca21] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429182125/log )
+  INFO [8d9fca21] Finished in 0.227 seconds with exit status 0 (successful).
+  INFO [e37f26cf] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429182125/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e37f26cf] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429182125/log )
+  INFO [e37f26cf] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [efd0af4d] Running [ -L /home/deploy/apps/releases/20200429182125/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [efd0af4d] Command: [ -L /home/deploy/apps/releases/20200429182125/tmp/pids ]
+ DEBUG [efd0af4d] Finished in 0.236 seconds with exit status 1 (failed).
+ DEBUG [14d1cd1f] Running [ -d /home/deploy/apps/releases/20200429182125/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [14d1cd1f] Command: [ -d /home/deploy/apps/releases/20200429182125/tmp/pids ]
+ DEBUG [14d1cd1f] Finished in 0.230 seconds with exit status 1 (failed).
+  INFO [ed82a4a5] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429182125/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ed82a4a5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429182125/tmp/pids )
+  INFO [ed82a4a5] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG [c6458cc7] Running [ -L /home/deploy/apps/releases/20200429182125/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c6458cc7] Command: [ -L /home/deploy/apps/releases/20200429182125/tmp/cache ]
+ DEBUG [c6458cc7] Finished in 0.238 seconds with exit status 1 (failed).
+ DEBUG [aed19439] Running [ -d /home/deploy/apps/releases/20200429182125/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [aed19439] Command: [ -d /home/deploy/apps/releases/20200429182125/tmp/cache ]
+ DEBUG [aed19439] Finished in 0.227 seconds with exit status 0 (successful).
+  INFO [73b69a91] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429182125/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [73b69a91] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429182125/tmp/cache )
+  INFO [73b69a91] Finished in 0.267 seconds with exit status 0 (successful).
+  INFO [ce61e9ef] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429182125/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ce61e9ef] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429182125/tmp/cache )
+  INFO [ce61e9ef] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [17ca30c0] Running [ -L /home/deploy/apps/releases/20200429182125/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [17ca30c0] Command: [ -L /home/deploy/apps/releases/20200429182125/tmp/sockets ]
+ DEBUG [17ca30c0] Finished in 0.240 seconds with exit status 1 (failed).
+ DEBUG [7fdc935a] Running [ -d /home/deploy/apps/releases/20200429182125/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7fdc935a] Command: [ -d /home/deploy/apps/releases/20200429182125/tmp/sockets ]
+ DEBUG [7fdc935a] Finished in 0.234 seconds with exit status 1 (failed).
+  INFO [f7e77180] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429182125/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f7e77180] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429182125/tmp/sockets )
+  INFO [f7e77180] Finished in 0.242 seconds with exit status 0 (successful).
+ DEBUG [de89e417] Running [ -L /home/deploy/apps/releases/20200429182125/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [de89e417] Command: [ -L /home/deploy/apps/releases/20200429182125/public/assets ]
+ DEBUG [de89e417] Finished in 0.256 seconds with exit status 1 (failed).
+ DEBUG [5fbcbb0e] Running [ -d /home/deploy/apps/releases/20200429182125/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5fbcbb0e] Command: [ -d /home/deploy/apps/releases/20200429182125/public/assets ]
+ DEBUG [5fbcbb0e] Finished in 0.244 seconds with exit status 1 (failed).
+  INFO [4f0d6c46] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429182125/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4f0d6c46] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429182125/public/assets )
+  INFO [4f0d6c46] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG [d6b53636] Running if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d6b53636] Command: if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi
+ DEBUG [d6b53636] Finished in 0.229 seconds with exit status 0 (successful).
+ DEBUG [ebc7957a] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ebc7957a] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/apps/shared/bundle )
+ DEBUG [ebc7957a] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31mThe following gems are missing[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * public_suffix (4.0.4)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * addressable (2.7.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * net-ssh (6.0.2)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * net-scp (3.0.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * sshkit (1.21.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * io-like (0.3.1)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * archive-zip (0.12.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * bindex (0.8.1)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * byebug (11.1.3)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * capistrano (3.13.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * capistrano-passenger (0.2.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * capistrano-rbenv (2.1.6)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * regexp_parser (1.7.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * xpath (3.2.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * capybara (3.32.1)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * chromedriver-helper (2.1.1)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * ruby_dep (1.5.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * listen (3.1.5)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * rubyzip (2.3.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * spring (2.1.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * spring-watcher-listen (2.0.1)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[31m * web-console (3.7.0)[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [ebc7957a] 	
+ DEBUG [ebc7957a] Finished in 0.720 seconds with exit status 1 (failed).
+  INFO [6643696c] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6643696c] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet )
+ DEBUG [6643696c] 	[33m[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag[0m
+ DEBUG [6643696c] 	
+ DEBUG [6643696c] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag[0m
+ DEBUG [6643696c] 	
+ DEBUG [6643696c] 	[33m[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag[0m
+ DEBUG [6643696c] 	
+  INFO [6643696c] Finished in 0.740 seconds with exit status 0 (successful).
+ DEBUG [cbd5dbf5] Running if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cbd5dbf5] Command: if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi
+ DEBUG [cbd5dbf5] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [a701f3f9] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a701f3f9] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" RAILS_ENV="production" RAILS_GROUPS="" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [a701f3f9] 	Yarn executable was not detected in the system.
+ DEBUG [a701f3f9] 	
+ DEBUG [a701f3f9] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [a701f3f9] 	
+  INFO [a701f3f9] Finished in 2.568 seconds with exit status 0 (successful).
+ DEBUG [fefe8bc1] Running if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fefe8bc1] Command: if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi
+ DEBUG [fefe8bc1] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [5d156e21] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429182125/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5d156e21] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429182125/assets_manifest_backup )
+  INFO [5d156e21] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [b2def050] Running /usr/bin/env ls /home/deploy/apps/releases/20200429182125/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b2def050] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429182125/public/assets/.sprockets-manifest* )
+ DEBUG [b2def050] 	/home/deploy/apps/releases/20200429182125/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [b2def050] 	
+ DEBUG [b2def050] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [7f3ccb16] Running /usr/bin/env ls /home/deploy/apps/releases/20200429182125/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7f3ccb16] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429182125/public/assets/.sprockets-manifest* )
+ DEBUG [7f3ccb16] 	/home/deploy/apps/releases/20200429182125/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [7f3ccb16] 	
+ DEBUG [7f3ccb16] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [f4fb10ed] Running /usr/bin/env cp /home/deploy/apps/releases/20200429182125/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429182125/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f4fb10ed] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cp /home/deploy/apps/releases/20200429182125/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429182125/assets_manifest_backup )
+  INFO [f4fb10ed] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [10996703] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200429182125 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [10996703] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/releases/20200429182125 /home/deploy/apps/releases/current )
+  INFO [10996703] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [3d70516f] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3d70516f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps )
+  INFO [3d70516f] Finished in 0.240 seconds with exit status 0 (successful).
+ DEBUG [51a44b8f] Running if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [51a44b8f] Command: if test ! -d /home/deploy/apps/releases/20200429182125; then echo "Directory does not exist '/home/deploy/apps/releases/20200429182125'" 1>&2; false; fi
+ DEBUG [51a44b8f] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG [2e4dfe74] Running bundle exec passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2e4dfe74] Command: cd /home/deploy/apps/releases/20200429182125 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; bundle exec passenger -v )
+ DEBUG [2e4dfe74] 	[1mTraceback[m (most recent call last):
+ DEBUG [2e4dfe74] 	
+ DEBUG [2e4dfe74] 		
+ DEBUG [2e4dfe74] 	2: from /usr/local/bin/bundle:23:in `<main>'
+ DEBUG [2e4dfe74] 	
+ DEBUG [2e4dfe74] 		
+ DEBUG [2e4dfe74] 	1: from /usr/lib/ruby/2.5.0/rubygems.rb:308:in `activate_bin_path'
+ DEBUG [2e4dfe74] 	
+ DEBUG [2e4dfe74] 	/usr/lib/ruby/2.5.0/rubygems.rb:289:in `find_spec_for_exe'
+ DEBUG [2e4dfe74] 	: 
+ DEBUG [2e4dfe74] 	[1m
+ DEBUG [2e4dfe74] 	can't find gem bundler (>= 0.a) with executable bundle
+ DEBUG [2e4dfe74] 	 (
+ DEBUG [2e4dfe74] 	[1;4m
+ DEBUG [2e4dfe74] 	Gem::GemNotFoundException
+ DEBUG [2e4dfe74] 	[m
+ DEBUG [2e4dfe74] 	[1m
+ DEBUG [2e4dfe74] 	)
+ DEBUG [2e4dfe74] 	
+ DEBUG [2e4dfe74] 	[m
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 14:51:43 -0400 cap production passenger:restart
+  INFO ---------------------------------------------------------------------------
+ DEBUG [ea349f9e] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ea349f9e] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [ea349f9e] Finished in 1.368 seconds with exit status 0 (successful).
+ DEBUG [10061310] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [10061310] Command: /usr/bin/env which passenger
+ DEBUG [10061310] 	/usr/bin/passenger
+ DEBUG [10061310] 	
+ DEBUG [10061310] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [2a888053] Running if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2a888053] Command: if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi
+ DEBUG [2a888053] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [9bde1d12] Running bundle exec passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9bde1d12] Command: cd /home/deploy/apps/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; bundle exec passenger -v )
+ DEBUG [9bde1d12] 	[1mTraceback[m (most recent call last):
+ DEBUG [9bde1d12] 	
+ DEBUG [9bde1d12] 		
+ DEBUG [9bde1d12] 	2: from /usr/local/bin/bundle:23:in `<main>'
+ DEBUG [9bde1d12] 	
+ DEBUG [9bde1d12] 		
+ DEBUG [9bde1d12] 	1: from /usr/lib/ruby/2.5.0/rubygems.rb:308:in `activate_bin_path'
+ DEBUG [9bde1d12] 	
+ DEBUG [9bde1d12] 	/usr/lib/ruby/2.5.0/rubygems.rb:289:in `find_spec_for_exe'
+ DEBUG [9bde1d12] 	: 
+ DEBUG [9bde1d12] 	[1m
+ DEBUG [9bde1d12] 	can't find gem bundler (>= 0.a) with executable bundle
+ DEBUG [9bde1d12] 	 (
+ DEBUG [9bde1d12] 	[1;4m
+ DEBUG [9bde1d12] 	Gem::GemNotFoundException
+ DEBUG [9bde1d12] 	[m
+ DEBUG [9bde1d12] 	[1m
+ DEBUG [9bde1d12] 	)
+ DEBUG [9bde1d12] 	
+ DEBUG [9bde1d12] 	[m
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 14:58:28 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [26dadfb7] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [26dadfb7] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [26dadfb7] Finished in 1.370 seconds with exit status 0 (successful).
+ DEBUG [c6994c48] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c6994c48] Command: /usr/bin/env which passenger
+ DEBUG [c6994c48] 	/usr/bin/passenger
+ DEBUG [c6994c48] 	
+ DEBUG [c6994c48] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [cd8c21db] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cd8c21db] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /tmp )
+  INFO [cd8c21db] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [c0ead20e] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c0ead20e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh )
+  INFO [c0ead20e] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [483a588d] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [483a588d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [483a588d] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1	HEAD
+  INFO [483a588d] Finished in 0.633 seconds with exit status 0 (successful).
+  INFO [9a0cde14] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9a0cde14] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases )
+  INFO [9a0cde14] Finished in 0.199 seconds with exit status 0 (successful).
+  INFO [b86819db] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b86819db] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets )
+  INFO [b86819db] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [f6897a77] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f6897a77] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [f6897a77] Finished in 0.226 seconds with exit status 0 (successful).
+ DEBUG [e57b70b1] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e57b70b1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null )
+ DEBUG [e57b70b1] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [e57b70b1] 	
+ DEBUG [e57b70b1] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [c4de443c] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c4de443c] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [c4de443c] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [256a48d2] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [256a48d2] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [256a48d2] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [21a8e219] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [21a8e219] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [21a8e219] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [1aaf6c57] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1aaf6c57] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [1aaf6c57] 	Fetching origin
+ DEBUG [1aaf6c57] 	
+  INFO [1aaf6c57] Finished in 0.646 seconds with exit status 0 (successful).
+ DEBUG [7eb9a666] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7eb9a666] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [7eb9a666] Finished in 0.181 seconds with exit status 0 (successful).
+  INFO [80bdc9c5] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429185832 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [80bdc9c5] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429185832 )
+  INFO [80bdc9c5] Finished in 0.241 seconds with exit status 0 (successful).
+  INFO [30eb0419] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429185832 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [30eb0419] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429185832 )
+  INFO [30eb0419] Finished in 0.540 seconds with exit status 0 (successful).
+ DEBUG [8aeede91] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8aeede91] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [8aeede91] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [8ebae9ac] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8ebae9ac] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [8ebae9ac] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [8ebae9ac] 	
+ DEBUG [8ebae9ac] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [69886d2e] Running if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [69886d2e] Command: if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi
+ DEBUG [69886d2e] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [d9da4600] Running /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d9da4600] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION )
+  INFO [d9da4600] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [c2e124eb] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429185832 /home/deploy/apps/releases/20200429185832/tmp /home/deploy/apps/releases/20200429185832/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c2e124eb] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429185832 /home/deploy/apps/releases/20200429185832/tmp /home/deploy/apps/releases/20200429185832/public )
+  INFO [c2e124eb] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [6e850d6c] Running [ -L /home/deploy/apps/releases/20200429185832/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6e850d6c] Command: [ -L /home/deploy/apps/releases/20200429185832/log ]
+ DEBUG [6e850d6c] Finished in 0.236 seconds with exit status 1 (failed).
+ DEBUG [4f480e36] Running [ -d /home/deploy/apps/releases/20200429185832/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4f480e36] Command: [ -d /home/deploy/apps/releases/20200429185832/log ]
+ DEBUG [4f480e36] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [203fb784] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429185832/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [203fb784] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429185832/log )
+  INFO [203fb784] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [9f635707] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429185832/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9f635707] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429185832/log )
+  INFO [9f635707] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [fde17e89] Running [ -L /home/deploy/apps/releases/20200429185832/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fde17e89] Command: [ -L /home/deploy/apps/releases/20200429185832/tmp/pids ]
+ DEBUG [fde17e89] Finished in 0.238 seconds with exit status 1 (failed).
+ DEBUG [5aee97d2] Running [ -d /home/deploy/apps/releases/20200429185832/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5aee97d2] Command: [ -d /home/deploy/apps/releases/20200429185832/tmp/pids ]
+ DEBUG [5aee97d2] Finished in 0.231 seconds with exit status 1 (failed).
+  INFO [78388a5f] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429185832/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [78388a5f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429185832/tmp/pids )
+  INFO [78388a5f] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [b3b585f9] Running [ -L /home/deploy/apps/releases/20200429185832/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b3b585f9] Command: [ -L /home/deploy/apps/releases/20200429185832/tmp/cache ]
+ DEBUG [b3b585f9] Finished in 0.234 seconds with exit status 1 (failed).
+ DEBUG [93b8ef25] Running [ -d /home/deploy/apps/releases/20200429185832/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [93b8ef25] Command: [ -d /home/deploy/apps/releases/20200429185832/tmp/cache ]
+ DEBUG [93b8ef25] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [1bb41762] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429185832/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1bb41762] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429185832/tmp/cache )
+  INFO [1bb41762] Finished in 0.274 seconds with exit status 0 (successful).
+  INFO [5791d61e] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429185832/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5791d61e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429185832/tmp/cache )
+  INFO [5791d61e] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [628e5d90] Running [ -L /home/deploy/apps/releases/20200429185832/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [628e5d90] Command: [ -L /home/deploy/apps/releases/20200429185832/tmp/sockets ]
+ DEBUG [628e5d90] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [d80891ec] Running [ -d /home/deploy/apps/releases/20200429185832/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d80891ec] Command: [ -d /home/deploy/apps/releases/20200429185832/tmp/sockets ]
+ DEBUG [d80891ec] Finished in 0.227 seconds with exit status 1 (failed).
+  INFO [c97151ac] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429185832/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c97151ac] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429185832/tmp/sockets )
+  INFO [c97151ac] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [8d70a721] Running [ -L /home/deploy/apps/releases/20200429185832/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8d70a721] Command: [ -L /home/deploy/apps/releases/20200429185832/public/assets ]
+ DEBUG [8d70a721] Finished in 0.233 seconds with exit status 1 (failed).
+ DEBUG [bee29b0d] Running [ -d /home/deploy/apps/releases/20200429185832/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bee29b0d] Command: [ -d /home/deploy/apps/releases/20200429185832/public/assets ]
+ DEBUG [bee29b0d] Finished in 0.233 seconds with exit status 1 (failed).
+  INFO [c0049f83] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429185832/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c0049f83] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429185832/public/assets )
+  INFO [c0049f83] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [5cb89811] Running if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5cb89811] Command: if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi
+ DEBUG [5cb89811] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [972524d3] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [972524d3] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [972524d3] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31mThe following gems are missing[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rake (13.0.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * concurrent-ruby (1.1.6)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * i18n (1.8.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * minitest (5.14.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * thread_safe (0.3.6)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * tzinfo (1.2.7)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * activesupport (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * builder (3.2.4)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * erubi (1.9.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * mini_portile2 (2.4.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * nokogiri (1.10.9)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rails-dom-testing (2.0.3)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * crass (1.0.6)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * loofah (2.5.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rails-html-sanitizer (1.3.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * actionview (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rack (2.2.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rack-test (1.1.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * actionpack (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * nio4r (2.5.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * websocket-extensions (0.1.4)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * websocket-driver (0.7.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * actioncable (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * globalid (0.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * activejob (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * mini_mime (1.0.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * mail (2.7.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * actionmailer (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * activemodel (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * arel (9.0.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * activerecord (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * mimemagic (0.3.4)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * marcel (0.3.3)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * activestorage (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * public_suffix (4.0.4)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * addressable (2.7.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * net-ssh (6.0.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * net-scp (3.0.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * sshkit (1.21.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * io-like (0.3.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * archive-zip (0.12.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * bindex (0.8.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * msgpack (1.3.3)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * bootsnap (1.4.6)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * byebug (11.1.3)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * capistrano (3.13.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * capistrano-passenger (0.2.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * capistrano-rbenv (2.1.6)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * regexp_parser (1.7.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * xpath (3.2.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * capybara (3.32.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * chromedriver-helper (2.1.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * coffee-script-source (1.12.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * execjs (2.7.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * coffee-script (2.4.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * method_source (1.0.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * thor (1.0.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * railties (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * coffee-rails (4.2.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * ffi (1.12.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * jbuilder (2.10.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rb-fsevent (0.10.3)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rb-inotify (0.10.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * ruby_dep (1.5.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * listen (3.1.5)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * passenger (6.0.4)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * sprockets (3.7.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * sprockets-rails (3.2.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rails (5.2.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * rubyzip (2.3.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * sass-listen (4.0.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * sass (3.7.4)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * tilt (2.0.10)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * sass-rails (5.1.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * spring (2.1.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * spring-watcher-listen (2.0.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * sqlite3 (1.4.2)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * turbolinks-source (5.2.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * turbolinks (5.2.1)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * uglifier (4.2.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[31m * web-console (3.7.0)[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [972524d3] 	
+ DEBUG [972524d3] Finished in 0.599 seconds with exit status 1 (failed).
+  INFO [bdd625c2] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --without development test --system as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bdd625c2] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --without development test --system )
+ DEBUG [bdd625c2] 	[33m[DEPRECATED] The `--system` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set system 'true'`, and stop using this flag[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[33m[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	Fetching gem metadata from https://rubygems.org/
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	.
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching rake 13.0.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling rake 13.0.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching concurrent-ruby 1.1.6[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching minitest 5.14.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching thread_safe 0.3.6[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling minitest 5.14.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling thread_safe 0.3.6[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling concurrent-ruby 1.1.6[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching builder 3.2.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling builder 3.2.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching erubi 1.9.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching mini_portile2 2.4.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling erubi 1.9.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling mini_portile2 2.4.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching crass 1.0.6[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling crass 1.0.6[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching rack 2.2.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching nio4r 2.5.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling nio4r 2.5.2 with native extensions[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling rack 2.2.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching websocket-extensions 0.1.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling websocket-extensions 0.1.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching mini_mime 1.0.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling mini_mime 1.0.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching mimemagic 0.3.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching arel 9.0.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching msgpack 1.3.3[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling arel 9.0.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling msgpack 1.3.3 with native extensions[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling mimemagic 0.3.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	Using bundler 2.1.4
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching coffee-script-source 1.12.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling coffee-script-source 1.12.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching execjs 2.7.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching method_source 1.0.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching thor 1.0.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling method_source 1.0.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling execjs 2.7.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling thor 1.0.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching ffi 1.12.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching rb-fsevent 0.10.3[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling rb-fsevent 0.10.3[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching tilt 2.0.10[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling tilt 2.0.10[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching sqlite3 1.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling sqlite3 1.4.2 with native extensions[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching turbolinks-source 5.2.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling ffi 1.12.2 with native extensions[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling turbolinks-source 5.2.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching tzinfo 1.2.7[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling tzinfo 1.2.7[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching nokogiri 1.10.9[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling nokogiri 1.10.9 with native extensions[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching i18n 1.8.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling i18n 1.8.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching websocket-driver 0.7.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching rack-test 1.1.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching passenger 6.0.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling websocket-driver 0.7.1 with native extensions[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling rack-test 1.1.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching sprockets 3.7.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling sprockets 3.7.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching mail 2.7.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching marcel 0.3.3[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling marcel 0.3.3[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching bootsnap 1.4.6[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling bootsnap 1.4.6 with native extensions[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling mail 2.7.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling passenger 6.0.4 with native extensions[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching coffee-script 2.4.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching uglifier 4.2.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling coffee-script 2.4.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching turbolinks 5.2.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling uglifier 4.2.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling turbolinks 5.2.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching rb-inotify 0.10.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling rb-inotify 0.10.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching activesupport 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching loofah 2.5.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling loofah 2.5.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling activesupport 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching sass-listen 4.0.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling sass-listen 4.0.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching rails-html-sanitizer 1.3.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling rails-html-sanitizer 1.3.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching sass 3.7.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling sass 3.7.4[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching rails-dom-testing 2.0.3[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling rails-dom-testing 2.0.3[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching globalid 0.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling globalid 0.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching activemodel 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching jbuilder 2.10.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling activemodel 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling jbuilder 2.10.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching actionview 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching activejob 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling actionview 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling activejob 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching activerecord 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling activerecord 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching actionpack 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling actionpack 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching actioncable 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling actioncable 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching actionmailer 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling actionmailer 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching railties 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching sprockets-rails 3.2.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling sprockets-rails 3.2.1[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling railties 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching activestorage 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling activestorage 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching coffee-rails 4.2.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching rails 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling rails 5.2.4.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling coffee-rails 4.2.2[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mFetching sass-rails 5.1.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mInstalling sass-rails 5.1.0[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[33mWarning: the lockfile is being updated to Bundler 2, after which you will be unable to return to Bundler 1.[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mBundle complete! 23 Gemfile dependencies, 60 gems now installed.[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mGems in the groups development and test were not installed.[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mUse `bundle info [gemname]` to see where a bundled gem is installed.[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mPost-install message from i18n:[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	But that may break your application.
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	If you are upgrading your Rails application from an older version of Rails:
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	Please check your Rails app for 'config.i18n.fallbacks = true'.
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	'config.i18n.fallbacks = [I18n.default_locale]'.
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	If not, fallbacks will be broken in your app by I18n 1.1.x.
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	If you are starting a NEW Rails application, you can ignore this notice.
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	For more info see:
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	[32mPost-install message from sass:[0m
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	Ruby Sass has reached end-of-life and should no longer be used.
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	* If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	  primary implementation: https://sass-lang.com/install
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	* If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	  sassc gem: https://github.com/sass/sassc-ruby#readme
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	* For more details, please refer to the Sass blog:
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	  https://sass-lang.com/blog/posts/7828841
+ DEBUG [bdd625c2] 	
+ DEBUG [bdd625c2] 	
+  INFO [bdd625c2] Finished in 71.649 seconds with exit status 0 (successful).
+ DEBUG [a44416a1] Running if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a44416a1] Command: if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi
+ DEBUG [a44416a1] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [8caaa23b] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8caaa23b] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" RAILS_ENV="production" RAILS_GROUPS="" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [8caaa23b] 	Yarn executable was not detected in the system.
+ DEBUG [8caaa23b] 	
+ DEBUG [8caaa23b] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [8caaa23b] 	
+  INFO [8caaa23b] Finished in 5.447 seconds with exit status 0 (successful).
+ DEBUG [db4b0bff] Running if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [db4b0bff] Command: if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi
+ DEBUG [db4b0bff] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [ad52a90b] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429185832/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ad52a90b] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429185832/assets_manifest_backup )
+  INFO [ad52a90b] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG [c8390278] Running /usr/bin/env ls /home/deploy/apps/releases/20200429185832/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c8390278] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429185832/public/assets/.sprockets-manifest* )
+ DEBUG [c8390278] 	/home/deploy/apps/releases/20200429185832/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [c8390278] 	
+ DEBUG [c8390278] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [9db41d84] Running /usr/bin/env ls /home/deploy/apps/releases/20200429185832/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9db41d84] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429185832/public/assets/.sprockets-manifest* )
+ DEBUG [9db41d84] 	/home/deploy/apps/releases/20200429185832/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [9db41d84] 	
+ DEBUG [9db41d84] Finished in 0.241 seconds with exit status 0 (successful).
+  INFO [f3d42f93] Running /usr/bin/env cp /home/deploy/apps/releases/20200429185832/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429185832/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f3d42f93] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cp /home/deploy/apps/releases/20200429185832/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429185832/assets_manifest_backup )
+  INFO [f3d42f93] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [64653a0f] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200429185832 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [64653a0f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/releases/20200429185832 /home/deploy/apps/releases/current )
+  INFO [64653a0f] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [7400b2de] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7400b2de] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps )
+  INFO [7400b2de] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [b8b7ba69] Running if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b8b7ba69] Command: if test ! -d /home/deploy/apps/releases/20200429185832; then echo "Directory does not exist '/home/deploy/apps/releases/20200429185832'" 1>&2; false; fi
+ DEBUG [b8b7ba69] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [1d2979b8] Running bundle exec passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1d2979b8] Command: cd /home/deploy/apps/releases/20200429185832 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; bundle exec passenger -v )
+ DEBUG [1d2979b8] 	[33m[31mYour Ruby version is 2.5.1, but your Gemfile specified 2.4.6[0m[0m
+ DEBUG [1d2979b8] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 15:00:54 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [317867bb] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [317867bb] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [317867bb] Finished in 1.736 seconds with exit status 0 (successful).
+ DEBUG [fd23f2a4] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fd23f2a4] Command: /usr/bin/env which passenger
+ DEBUG [fd23f2a4] 	/usr/bin/passenger
+ DEBUG [fd23f2a4] 	
+ DEBUG [fd23f2a4] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [0719d4eb] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0719d4eb] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /tmp )
+  INFO [0719d4eb] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [6364a8f4] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6364a8f4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh )
+  INFO [6364a8f4] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [2291fd7a] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2291fd7a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [2291fd7a] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [2291fd7a] 		HEAD
+  INFO [2291fd7a] Finished in 0.685 seconds with exit status 0 (successful).
+  INFO [4978d698] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4978d698] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases )
+  INFO [4978d698] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [1dbc91e2] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1dbc91e2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets )
+  INFO [1dbc91e2] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [b0ba209b] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b0ba209b] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [b0ba209b] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [22aa5f3f] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [22aa5f3f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null )
+ DEBUG [22aa5f3f] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [22aa5f3f] 	
+ DEBUG [22aa5f3f] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [2efc9ed4] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2efc9ed4] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [2efc9ed4] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [69cb1c9d] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [69cb1c9d] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [69cb1c9d] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [3c4b83c2] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3c4b83c2] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [3c4b83c2] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [0e53bf8f] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0e53bf8f] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0e53bf8f] 	Fetching origin
+ DEBUG [0e53bf8f] 	
+  INFO [0e53bf8f] Finished in 0.691 seconds with exit status 0 (successful).
+ DEBUG [77a8f070] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [77a8f070] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [77a8f070] Finished in 0.185 seconds with exit status 0 (successful).
+  INFO [14551c0d] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190058 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [14551c0d] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190058 )
+  INFO [14551c0d] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [62720531] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429190058 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [62720531] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429190058 )
+  INFO [62720531] Finished in 0.545 seconds with exit status 0 (successful).
+ DEBUG [2b93f604] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2b93f604] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [2b93f604] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [4b3d6865] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4b3d6865] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [4b3d6865] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [4b3d6865] 	
+ DEBUG [4b3d6865] Finished in 0.253 seconds with exit status 0 (successful).
+ DEBUG [755d1e6c] Running if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [755d1e6c] Command: if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi
+ DEBUG [755d1e6c] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [fa9599fe] Running /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fa9599fe] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION )
+  INFO [fa9599fe] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [c4f85cb0] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190058 /home/deploy/apps/releases/20200429190058/tmp /home/deploy/apps/releases/20200429190058/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c4f85cb0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190058 /home/deploy/apps/releases/20200429190058/tmp /home/deploy/apps/releases/20200429190058/public )
+  INFO [c4f85cb0] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [b09aef93] Running [ -L /home/deploy/apps/releases/20200429190058/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b09aef93] Command: [ -L /home/deploy/apps/releases/20200429190058/log ]
+ DEBUG [b09aef93] Finished in 0.235 seconds with exit status 1 (failed).
+ DEBUG [bc3d9740] Running [ -d /home/deploy/apps/releases/20200429190058/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bc3d9740] Command: [ -d /home/deploy/apps/releases/20200429190058/log ]
+ DEBUG [bc3d9740] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [56e058cd] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190058/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [56e058cd] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190058/log )
+  INFO [56e058cd] Finished in 0.238 seconds with exit status 0 (successful).
+  INFO [2f6c5739] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429190058/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2f6c5739] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429190058/log )
+  INFO [2f6c5739] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [9143c84f] Running [ -L /home/deploy/apps/releases/20200429190058/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9143c84f] Command: [ -L /home/deploy/apps/releases/20200429190058/tmp/pids ]
+ DEBUG [9143c84f] Finished in 0.235 seconds with exit status 1 (failed).
+ DEBUG [3e29a2c3] Running [ -d /home/deploy/apps/releases/20200429190058/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3e29a2c3] Command: [ -d /home/deploy/apps/releases/20200429190058/tmp/pids ]
+ DEBUG [3e29a2c3] Finished in 0.231 seconds with exit status 1 (failed).
+  INFO [6892ecba] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429190058/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6892ecba] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429190058/tmp/pids )
+  INFO [6892ecba] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [384587d3] Running [ -L /home/deploy/apps/releases/20200429190058/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [384587d3] Command: [ -L /home/deploy/apps/releases/20200429190058/tmp/cache ]
+ DEBUG [384587d3] Finished in 0.231 seconds with exit status 1 (failed).
+ DEBUG [45f41345] Running [ -d /home/deploy/apps/releases/20200429190058/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [45f41345] Command: [ -d /home/deploy/apps/releases/20200429190058/tmp/cache ]
+ DEBUG [45f41345] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [2e343429] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190058/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2e343429] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190058/tmp/cache )
+  INFO [2e343429] Finished in 0.265 seconds with exit status 0 (successful).
+  INFO [06575809] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429190058/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [06575809] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429190058/tmp/cache )
+  INFO [06575809] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [4805cac0] Running [ -L /home/deploy/apps/releases/20200429190058/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4805cac0] Command: [ -L /home/deploy/apps/releases/20200429190058/tmp/sockets ]
+ DEBUG [4805cac0] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [0f680725] Running [ -d /home/deploy/apps/releases/20200429190058/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0f680725] Command: [ -d /home/deploy/apps/releases/20200429190058/tmp/sockets ]
+ DEBUG [0f680725] Finished in 0.240 seconds with exit status 1 (failed).
+  INFO [f6143a09] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429190058/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f6143a09] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429190058/tmp/sockets )
+  INFO [f6143a09] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [b819ce25] Running [ -L /home/deploy/apps/releases/20200429190058/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b819ce25] Command: [ -L /home/deploy/apps/releases/20200429190058/public/assets ]
+ DEBUG [b819ce25] Finished in 0.244 seconds with exit status 1 (failed).
+ DEBUG [cbfb6af4] Running [ -d /home/deploy/apps/releases/20200429190058/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cbfb6af4] Command: [ -d /home/deploy/apps/releases/20200429190058/public/assets ]
+ DEBUG [cbfb6af4] Finished in 0.239 seconds with exit status 1 (failed).
+  INFO [8b2e9644] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429190058/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8b2e9644] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429190058/public/assets )
+  INFO [8b2e9644] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [4d897c91] Running if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4d897c91] Command: if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi
+ DEBUG [4d897c91] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [c40ebcee] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c40ebcee] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [c40ebcee] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31mThe following gems are missing[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * public_suffix (4.0.4)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * addressable (2.7.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * net-ssh (6.0.2)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * net-scp (3.0.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * sshkit (1.21.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * io-like (0.3.1)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * archive-zip (0.12.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * bindex (0.8.1)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * byebug (11.1.3)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * capistrano (3.13.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * capistrano-passenger (0.2.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * capistrano-rbenv (2.1.6)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * regexp_parser (1.7.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * xpath (3.2.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * capybara (3.32.1)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * chromedriver-helper (2.1.1)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * ruby_dep (1.5.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * listen (3.1.5)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * rubyzip (2.3.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * spring (2.1.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * spring-watcher-listen (2.0.1)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[31m * web-console (3.7.0)[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [c40ebcee] 	
+ DEBUG [c40ebcee] Finished in 0.531 seconds with exit status 1 (failed).
+  INFO [212741a1] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [212741a1] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --without development test --deployment --quiet )
+ DEBUG [212741a1] 	[33m[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag[0m
+ DEBUG [212741a1] 	
+ DEBUG [212741a1] 	[33m[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag[0m
+ DEBUG [212741a1] 	
+  INFO [212741a1] Finished in 71.555 seconds with exit status 0 (successful).
+ DEBUG [31cd6083] Running if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [31cd6083] Command: if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi
+ DEBUG [31cd6083] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [714126df] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [714126df] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" RAILS_ENV="production" RAILS_GROUPS="" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [714126df] 	Yarn executable was not detected in the system.
+ DEBUG [714126df] 	
+ DEBUG [714126df] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [714126df] 	
+  INFO [714126df] Finished in 5.245 seconds with exit status 0 (successful).
+ DEBUG [fb10516a] Running if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fb10516a] Command: if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi
+ DEBUG [fb10516a] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [af1804df] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190058/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [af1804df] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190058/assets_manifest_backup )
+  INFO [af1804df] Finished in 0.251 seconds with exit status 0 (successful).
+ DEBUG [287d31dd] Running /usr/bin/env ls /home/deploy/apps/releases/20200429190058/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [287d31dd] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429190058/public/assets/.sprockets-manifest* )
+ DEBUG [287d31dd] 	/home/deploy/apps/releases/20200429190058/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [287d31dd] 	
+ DEBUG [287d31dd] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [eef804d8] Running /usr/bin/env ls /home/deploy/apps/releases/20200429190058/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [eef804d8] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429190058/public/assets/.sprockets-manifest* )
+ DEBUG [eef804d8] 	/home/deploy/apps/releases/20200429190058/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [eef804d8] 	
+ DEBUG [eef804d8] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [fb6f4764] Running /usr/bin/env cp /home/deploy/apps/releases/20200429190058/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429190058/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fb6f4764] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cp /home/deploy/apps/releases/20200429190058/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429190058/assets_manifest_backup )
+  INFO [fb6f4764] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [3f2786ff] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200429190058 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3f2786ff] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/releases/20200429190058 /home/deploy/apps/releases/current )
+  INFO [3f2786ff] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [e9084798] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e9084798] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps )
+  INFO [e9084798] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [f8212747] Running if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f8212747] Command: if test ! -d /home/deploy/apps/releases/20200429190058; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190058'" 1>&2; false; fi
+ DEBUG [f8212747] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [d67a6ec0] Running bundle exec passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d67a6ec0] Command: cd /home/deploy/apps/releases/20200429190058 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; bundle exec passenger -v )
+ DEBUG [d67a6ec0] 	[1mTraceback[m (most recent call last):
+ DEBUG [d67a6ec0] 	
+ DEBUG [d67a6ec0] 		
+ DEBUG [d67a6ec0] 	2: from /usr/local/bin/bundle:23:in `<main>'
+ DEBUG [d67a6ec0] 	
+ DEBUG [d67a6ec0] 		
+ DEBUG [d67a6ec0] 	1: from /usr/lib/ruby/2.5.0/rubygems.rb:308:in `activate_bin_path'
+ DEBUG [d67a6ec0] 	
+ DEBUG [d67a6ec0] 	/usr/lib/ruby/2.5.0/rubygems.rb:289:in `find_spec_for_exe'
+ DEBUG [d67a6ec0] 	: 
+ DEBUG [d67a6ec0] 	[1m
+ DEBUG [d67a6ec0] 	can't find gem bundler (>= 0.a) with executable bundle
+ DEBUG [d67a6ec0] 	 (
+ DEBUG [d67a6ec0] 	[1;4m
+ DEBUG [d67a6ec0] 	Gem::GemNotFoundException
+ DEBUG [d67a6ec0] 	[m
+ DEBUG [d67a6ec0] 	[1m
+ DEBUG [d67a6ec0] 	)
+ DEBUG [d67a6ec0] 	
+ DEBUG [d67a6ec0] 	[m
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 15:04:15 -0400 cap production passenger:restart
+  INFO ---------------------------------------------------------------------------
+ DEBUG [fc61e20b] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fc61e20b] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [fc61e20b] Finished in 1.783 seconds with exit status 0 (successful).
+ DEBUG [a549b8a3] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a549b8a3] Command: /usr/bin/env which passenger
+ DEBUG [a549b8a3] 	/usr/bin/passenger
+ DEBUG [a549b8a3] 	
+ DEBUG [a549b8a3] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [1e5b029b] Running if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1e5b029b] Command: if test ! -d /home/deploy/apps/current; then echo "Directory does not exist '/home/deploy/apps/current'" 1>&2; false; fi
+ DEBUG [1e5b029b] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [c4af52fe] Running /usr/bin/env passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c4af52fe] Command: cd /home/deploy/apps/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env passenger -v )
+ DEBUG [c4af52fe] 	Phusion Passenger 6.0.4
+ DEBUG [c4af52fe] 	
+ DEBUG [c4af52fe] Finished in 0.339 seconds with exit status 0 (successful).
+  INFO [049c189b] Running /usr/bin/env passenger-config restart-app /home/deploy/apps --ignore-app-not-running as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [049c189b] Command: cd /home/deploy/apps/current && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env passenger-config restart-app /home/deploy/apps --ignore-app-not-running )
+ DEBUG [049c189b] 	Restarting /home/deploy/apps/current (production)
+ DEBUG [049c189b] 	
+  INFO [049c189b] Finished in 0.531 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 15:04:29 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [dc5ae948] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [dc5ae948] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [dc5ae948] Finished in 1.434 seconds with exit status 0 (successful).
+ DEBUG [a0535d42] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a0535d42] Command: /usr/bin/env which passenger
+ DEBUG [a0535d42] 	/usr/bin/passenger
+ DEBUG [a0535d42] 	
+ DEBUG [a0535d42] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [ca698298] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ca698298] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /tmp )
+  INFO [ca698298] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [6205a2dd] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6205a2dd] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh )
+  INFO [6205a2dd] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [bb6568af] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bb6568af] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [bb6568af] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1	HEAD
+  INFO [bb6568af] Finished in 0.665 seconds with exit status 0 (successful).
+  INFO [f93aae40] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f93aae40] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases )
+  INFO [f93aae40] Finished in 0.191 seconds with exit status 0 (successful).
+  INFO [38e0cbe2] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [38e0cbe2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets )
+  INFO [38e0cbe2] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [b5f6075f] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b5f6075f] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [b5f6075f] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [ede7373d] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ede7373d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null )
+ DEBUG [ede7373d] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [ede7373d] 	
+ DEBUG [ede7373d] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG [1c46b61c] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1c46b61c] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [1c46b61c] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [8cfa704c] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8cfa704c] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [8cfa704c] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [95aa31a0] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [95aa31a0] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [95aa31a0] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [dd84a7a3] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [dd84a7a3] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [dd84a7a3] 	Fetching origin
+ DEBUG [dd84a7a3] 	
+  INFO [dd84a7a3] Finished in 0.642 seconds with exit status 0 (successful).
+ DEBUG [e32e5879] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e32e5879] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [e32e5879] Finished in 0.179 seconds with exit status 0 (successful).
+  INFO [e6b446ca] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190434 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e6b446ca] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190434 )
+  INFO [e6b446ca] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [a6eeff76] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429190434 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a6eeff76] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429190434 )
+  INFO [a6eeff76] Finished in 0.527 seconds with exit status 0 (successful).
+ DEBUG [ca302cad] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ca302cad] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [ca302cad] Finished in 0.229 seconds with exit status 0 (successful).
+ DEBUG [e158b076] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e158b076] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e158b076] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [e158b076] 	
+ DEBUG [e158b076] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [92392219] Running if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [92392219] Command: if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi
+ DEBUG [92392219] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [15ee0e6e] Running /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [15ee0e6e] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION )
+  INFO [15ee0e6e] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [e89a8f91] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190434 /home/deploy/apps/releases/20200429190434/tmp /home/deploy/apps/releases/20200429190434/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e89a8f91] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190434 /home/deploy/apps/releases/20200429190434/tmp /home/deploy/apps/releases/20200429190434/public )
+  INFO [e89a8f91] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG [b4891036] Running [ -L /home/deploy/apps/releases/20200429190434/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b4891036] Command: [ -L /home/deploy/apps/releases/20200429190434/log ]
+ DEBUG [b4891036] Finished in 0.226 seconds with exit status 1 (failed).
+ DEBUG [b84400de] Running [ -d /home/deploy/apps/releases/20200429190434/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b84400de] Command: [ -d /home/deploy/apps/releases/20200429190434/log ]
+ DEBUG [b84400de] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [57aee9f1] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190434/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [57aee9f1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190434/log )
+  INFO [57aee9f1] Finished in 0.239 seconds with exit status 0 (successful).
+  INFO [a7baae05] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429190434/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a7baae05] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429190434/log )
+  INFO [a7baae05] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [9b591675] Running [ -L /home/deploy/apps/releases/20200429190434/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9b591675] Command: [ -L /home/deploy/apps/releases/20200429190434/tmp/pids ]
+ DEBUG [9b591675] Finished in 0.234 seconds with exit status 1 (failed).
+ DEBUG [4c45274e] Running [ -d /home/deploy/apps/releases/20200429190434/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4c45274e] Command: [ -d /home/deploy/apps/releases/20200429190434/tmp/pids ]
+ DEBUG [4c45274e] Finished in 0.232 seconds with exit status 1 (failed).
+  INFO [6c194ea8] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429190434/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6c194ea8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429190434/tmp/pids )
+  INFO [6c194ea8] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [9d7746c1] Running [ -L /home/deploy/apps/releases/20200429190434/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9d7746c1] Command: [ -L /home/deploy/apps/releases/20200429190434/tmp/cache ]
+ DEBUG [9d7746c1] Finished in 0.234 seconds with exit status 1 (failed).
+ DEBUG [2cfa85f0] Running [ -d /home/deploy/apps/releases/20200429190434/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2cfa85f0] Command: [ -d /home/deploy/apps/releases/20200429190434/tmp/cache ]
+ DEBUG [2cfa85f0] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [b6b5aa64] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190434/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b6b5aa64] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190434/tmp/cache )
+  INFO [b6b5aa64] Finished in 0.290 seconds with exit status 0 (successful).
+  INFO [831ccd76] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429190434/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [831ccd76] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429190434/tmp/cache )
+  INFO [831ccd76] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [eb122348] Running [ -L /home/deploy/apps/releases/20200429190434/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [eb122348] Command: [ -L /home/deploy/apps/releases/20200429190434/tmp/sockets ]
+ DEBUG [eb122348] Finished in 0.235 seconds with exit status 1 (failed).
+ DEBUG [22e91338] Running [ -d /home/deploy/apps/releases/20200429190434/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [22e91338] Command: [ -d /home/deploy/apps/releases/20200429190434/tmp/sockets ]
+ DEBUG [22e91338] Finished in 0.234 seconds with exit status 1 (failed).
+  INFO [a49fea7f] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429190434/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a49fea7f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429190434/tmp/sockets )
+  INFO [a49fea7f] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [b9e3f3d5] Running [ -L /home/deploy/apps/releases/20200429190434/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b9e3f3d5] Command: [ -L /home/deploy/apps/releases/20200429190434/public/assets ]
+ DEBUG [b9e3f3d5] Finished in 0.237 seconds with exit status 1 (failed).
+ DEBUG [6f9b53ff] Running [ -d /home/deploy/apps/releases/20200429190434/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6f9b53ff] Command: [ -d /home/deploy/apps/releases/20200429190434/public/assets ]
+ DEBUG [6f9b53ff] Finished in 0.230 seconds with exit status 1 (failed).
+  INFO [df1213df] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429190434/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [df1213df] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429190434/public/assets )
+  INFO [df1213df] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [3010b0fb] Running if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [3010b0fb] Command: if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi
+ DEBUG [3010b0fb] Finished in 0.262 seconds with exit status 0 (successful).
+ DEBUG [60f56ffc] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [60f56ffc] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/apps/shared/bundle )
+ DEBUG [60f56ffc] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31mThe following gems are missing[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * public_suffix (4.0.4)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * addressable (2.7.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * net-ssh (6.0.2)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * net-scp (3.0.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * sshkit (1.21.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * io-like (0.3.1)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * archive-zip (0.12.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * bindex (0.8.1)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * byebug (11.1.3)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * capistrano (3.13.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * capistrano-passenger (0.2.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * capistrano-rbenv (2.1.6)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * regexp_parser (1.7.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * xpath (3.2.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * capybara (3.32.1)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * chromedriver-helper (2.1.1)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * ruby_dep (1.5.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * listen (3.1.5)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * rubyzip (2.3.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * spring (2.1.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * spring-watcher-listen (2.0.1)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[31m * web-console (3.7.0)[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [60f56ffc] 	
+ DEBUG [60f56ffc] Finished in 0.594 seconds with exit status 1 (failed).
+  INFO [ef91c077] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ef91c077] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet )
+ DEBUG [ef91c077] 	[33m[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag[0m
+ DEBUG [ef91c077] 	
+ DEBUG [ef91c077] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag[0m
+ DEBUG [ef91c077] 	
+ DEBUG [ef91c077] 	[33m[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag[0m
+ DEBUG [ef91c077] 	
+  INFO [ef91c077] Finished in 0.634 seconds with exit status 0 (successful).
+ DEBUG [7fc0fbf9] Running if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7fc0fbf9] Command: if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi
+ DEBUG [7fc0fbf9] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [05c3f15f] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [05c3f15f] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" RAILS_ENV="production" RAILS_GROUPS="" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [05c3f15f] 	Yarn executable was not detected in the system.
+ DEBUG [05c3f15f] 	
+ DEBUG [05c3f15f] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [05c3f15f] 	
+  INFO [05c3f15f] Finished in 2.268 seconds with exit status 0 (successful).
+ DEBUG [fd2737f0] Running if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fd2737f0] Command: if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi
+ DEBUG [fd2737f0] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [758ff783] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190434/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [758ff783] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190434/assets_manifest_backup )
+  INFO [758ff783] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [244bf0d0] Running /usr/bin/env ls /home/deploy/apps/releases/20200429190434/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [244bf0d0] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429190434/public/assets/.sprockets-manifest* )
+ DEBUG [244bf0d0] 	/home/deploy/apps/releases/20200429190434/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [244bf0d0] 	
+ DEBUG [244bf0d0] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [a6340b9b] Running /usr/bin/env ls /home/deploy/apps/releases/20200429190434/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a6340b9b] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429190434/public/assets/.sprockets-manifest* )
+ DEBUG [a6340b9b] 	/home/deploy/apps/releases/20200429190434/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [a6340b9b] 	
+ DEBUG [a6340b9b] Finished in 0.237 seconds with exit status 0 (successful).
+  INFO [08423be8] Running /usr/bin/env cp /home/deploy/apps/releases/20200429190434/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429190434/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [08423be8] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cp /home/deploy/apps/releases/20200429190434/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429190434/assets_manifest_backup )
+  INFO [08423be8] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [b3e17d65] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200429190434 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b3e17d65] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/releases/20200429190434 /home/deploy/apps/releases/current )
+  INFO [b3e17d65] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [1ec490fc] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1ec490fc] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps )
+  INFO [1ec490fc] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [66c1771e] Running if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [66c1771e] Command: if test ! -d /home/deploy/apps/releases/20200429190434; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190434'" 1>&2; false; fi
+ DEBUG [66c1771e] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [4315ada9] Running /usr/bin/env passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4315ada9] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env passenger -v )
+ DEBUG [4315ada9] 	Phusion Passenger 6.0.4
+ DEBUG [4315ada9] 	
+ DEBUG [4315ada9] Finished in 0.317 seconds with exit status 0 (successful).
+  INFO [7bb0db53] Running /usr/bin/env passenger-config restart-app /home/deploy/apps --ignore-app-not-running as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7bb0db53] Command: cd /home/deploy/apps/releases/20200429190434 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env passenger-config restart-app /home/deploy/apps --ignore-app-not-running )
+ DEBUG [7bb0db53] 	Restarting /home/deploy/apps/current (production)
+ DEBUG [7bb0db53] 	
+  INFO [7bb0db53] Finished in 0.394 seconds with exit status 0 (successful).
+ DEBUG [ca0df7c2] Running /usr/bin/env ls -x /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ca0df7c2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls -x /home/deploy/apps/releases )
+ DEBUG [ca0df7c2] 	20200429145810
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429152017
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429152558
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429155436
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429155946
+ DEBUG [ca0df7c2] 	
+ DEBUG [ca0df7c2] 	20200429161255
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429163813
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429164942
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429165513
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429171530
+ DEBUG [ca0df7c2] 	
+ DEBUG [ca0df7c2] 	20200429173433
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429182125
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429185832
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429190058
+ DEBUG [ca0df7c2] 		
+ DEBUG [ca0df7c2] 	20200429190434
+ DEBUG [ca0df7c2] 	
+ DEBUG [ca0df7c2] Finished in 0.290 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 15 deployed releases on ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fb22ee86] Running [ -d /home/deploy/apps/current ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fb22ee86] Command: [ -d /home/deploy/apps/current ]
+ DEBUG [fb22ee86] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [039562be] Running /usr/bin/env readlink /home/deploy/apps/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [039562be] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env readlink /home/deploy/apps/current )
+ DEBUG [039562be] 	/home/deploy/apps/releases/20200429190434
+ DEBUG [039562be] 	
+ DEBUG [039562be] Finished in 0.241 seconds with exit status 0 (successful).
+  INFO [da75df17] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429145810 /home/deploy/apps/releases/20200429152017 /home/deploy/apps/releases/20200429152558 /home/deploy/apps/releases/20200429155436 /home/deploy/apps/releases/20200429155946 /home/deploy/apps/releases/20200429161255 /home/deploy/apps/releases/20200429163813 /home/deploy/apps/releases/20200429164942 /home/deploy/apps/releases/20200429165513 /home/deploy/apps/releases/20200429171530 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [da75df17] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429145810 /home/deploy/apps/releases/20200429152017 /home/deploy/apps/releases/20200429152558 /home/deploy/apps/releases/20200429155436 /home/deploy/apps/releases/20200429155946 /home/deploy/apps/releases/20200429161255 /home/deploy/apps/releases/20200429163813 /home/deploy/apps/releases/20200429164942 /home/deploy/apps/releases/20200429165513 /home/deploy/apps/releases/20200429171530 )
+  INFO [da75df17] Finished in 0.920 seconds with exit status 0 (successful).
+ DEBUG [60d36910] Running if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [60d36910] Command: if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi
+ DEBUG [60d36910] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [1ec0c6d3] Running /usr/bin/env echo "Branch master (at 7405093cf64327dbb2ba8f9fbd987b08411b92f1) deployed as release 20200429190434 by jarp" >> /home/deploy/apps/revisions.log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1ec0c6d3] Command: cd /home/deploy/apps/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env echo "Branch master (at 7405093cf64327dbb2ba8f9fbd987b08411b92f1) deployed as release 20200429190434 by jarp" >> /home/deploy/apps/revisions.log )
+  INFO [1ec0c6d3] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-04-29 15:05:39 -0400 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [cb1a6617] Running [ -d $HOME/.rbenv/versions/2.4.6 ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cb1a6617] Command: [ -d $HOME/.rbenv/versions/2.4.6 ]
+ DEBUG [cb1a6617] Finished in 1.391 seconds with exit status 0 (successful).
+ DEBUG [01a0d86e] Running /usr/bin/env which passenger as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [01a0d86e] Command: /usr/bin/env which passenger
+ DEBUG [01a0d86e] 	/usr/bin/passenger
+ DEBUG [01a0d86e] 	
+ DEBUG [01a0d86e] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [fe8395d2] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [fe8395d2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /tmp )
+  INFO [fe8395d2] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 0.0%
+  INFO Uploading /tmp/git-ssh-my_app_name-production-jarp.sh 100.0%
+  INFO [e34d04f3] Running /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e34d04f3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env chmod 700 /tmp/git-ssh-my_app_name-production-jarp.sh )
+  INFO [e34d04f3] Finished in 0.245 seconds with exit status 0 (successful).
+  INFO [7c1e4b81] Running /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7c1e4b81] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git ls-remote git@github.com:ndwebgroup/ansible-test-app.git HEAD )
+ DEBUG [7c1e4b81] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1	HEAD
+  INFO [7c1e4b81] Finished in 0.615 seconds with exit status 0 (successful).
+  INFO [40c1559a] Running /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [40c1559a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared /home/deploy/apps/releases )
+  INFO [40c1559a] Finished in 0.200 seconds with exit status 0 (successful).
+  INFO [6bbcb190] Running /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [6bbcb190] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/shared/log /home/deploy/apps/shared/tmp/pids /home/deploy/apps/shared/tmp/cache /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/shared/public/assets )
+  INFO [6bbcb190] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [07849c7d] Running [ -f /home/deploy/apps/current/REVISION ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [07849c7d] Command: [ -f /home/deploy/apps/current/REVISION ]
+ DEBUG [07849c7d] Finished in 0.239 seconds with exit status 0 (successful).
+ DEBUG [f8990b88] Running /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f8990b88] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cat /home/deploy/apps/current/REVISION 2>/dev/null )
+ DEBUG [f8990b88] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [f8990b88] 	
+ DEBUG [f8990b88] Finished in 0.252 seconds with exit status 0 (successful).
+ DEBUG [8174b9eb] Running [ -f /home/deploy/apps/repo/HEAD ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [8174b9eb] Command: [ -f /home/deploy/apps/repo/HEAD ]
+ DEBUG [8174b9eb] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/apps/repo
+ DEBUG [dd0bb007] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [dd0bb007] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [dd0bb007] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [9ae9b006] Running /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9ae9b006] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote set-url origin git@github.com:ndwebgroup/ansible-test-app.git )
+  INFO [9ae9b006] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [eb4fa7b1] Running /usr/bin/env git remote update --prune as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [eb4fa7b1] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [eb4fa7b1] 	Fetching origin
+ DEBUG [eb4fa7b1] 	
+  INFO [eb4fa7b1] Finished in 0.634 seconds with exit status 0 (successful).
+ DEBUG [15dd3025] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [15dd3025] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [15dd3025] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [bd96930e] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190544 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [bd96930e] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190544 )
+  INFO [bd96930e] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [06034719] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429190544 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [06034719] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/apps/releases/20200429190544 )
+  INFO [06034719] Finished in 0.453 seconds with exit status 0 (successful).
+ DEBUG [76b246e9] Running if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [76b246e9] Command: if test ! -d /home/deploy/apps/repo; then echo "Directory does not exist '/home/deploy/apps/repo'" 1>&2; false; fi
+ DEBUG [76b246e9] Finished in 0.235 seconds with exit status 0 (successful).
+ DEBUG [1b980aa0] Running /usr/bin/env git rev-list --max-count=1 master as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1b980aa0] Command: cd /home/deploy/apps/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-my_app_name-production-jarp.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1b980aa0] 	7405093cf64327dbb2ba8f9fbd987b08411b92f1
+ DEBUG [1b980aa0] 	
+ DEBUG [1b980aa0] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [253c4408] Running if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [253c4408] Command: if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi
+ DEBUG [253c4408] Finished in 0.228 seconds with exit status 0 (successful).
+  INFO [a137bc0e] Running /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a137bc0e] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env echo "7405093cf64327dbb2ba8f9fbd987b08411b92f1" > REVISION )
+  INFO [a137bc0e] Finished in 0.263 seconds with exit status 0 (successful).
+  INFO [99fc83d3] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190544 /home/deploy/apps/releases/20200429190544/tmp /home/deploy/apps/releases/20200429190544/public as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [99fc83d3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190544 /home/deploy/apps/releases/20200429190544/tmp /home/deploy/apps/releases/20200429190544/public )
+  INFO [99fc83d3] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG [e742567c] Running [ -L /home/deploy/apps/releases/20200429190544/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e742567c] Command: [ -L /home/deploy/apps/releases/20200429190544/log ]
+ DEBUG [e742567c] Finished in 0.234 seconds with exit status 1 (failed).
+ DEBUG [2372c7e6] Running [ -d /home/deploy/apps/releases/20200429190544/log ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2372c7e6] Command: [ -d /home/deploy/apps/releases/20200429190544/log ]
+ DEBUG [2372c7e6] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [47f10d8c] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190544/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [47f10d8c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190544/log )
+  INFO [47f10d8c] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO [5946d63d] Running /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429190544/log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5946d63d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/log /home/deploy/apps/releases/20200429190544/log )
+  INFO [5946d63d] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [50218504] Running [ -L /home/deploy/apps/releases/20200429190544/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [50218504] Command: [ -L /home/deploy/apps/releases/20200429190544/tmp/pids ]
+ DEBUG [50218504] Finished in 0.243 seconds with exit status 1 (failed).
+ DEBUG [eb009bf3] Running [ -d /home/deploy/apps/releases/20200429190544/tmp/pids ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [eb009bf3] Command: [ -d /home/deploy/apps/releases/20200429190544/tmp/pids ]
+ DEBUG [eb009bf3] Finished in 0.234 seconds with exit status 1 (failed).
+  INFO [97c06b27] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429190544/tmp/pids as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [97c06b27] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/pids /home/deploy/apps/releases/20200429190544/tmp/pids )
+  INFO [97c06b27] Finished in 0.247 seconds with exit status 0 (successful).
+ DEBUG [e60afc93] Running [ -L /home/deploy/apps/releases/20200429190544/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e60afc93] Command: [ -L /home/deploy/apps/releases/20200429190544/tmp/cache ]
+ DEBUG [e60afc93] Finished in 0.238 seconds with exit status 1 (failed).
+ DEBUG [cd5ce429] Running [ -d /home/deploy/apps/releases/20200429190544/tmp/cache ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [cd5ce429] Command: [ -d /home/deploy/apps/releases/20200429190544/tmp/cache ]
+ DEBUG [cd5ce429] Finished in 0.230 seconds with exit status 0 (successful).
+  INFO [c8657aec] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190544/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c8657aec] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429190544/tmp/cache )
+  INFO [c8657aec] Finished in 0.258 seconds with exit status 0 (successful).
+  INFO [adfc6e4c] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429190544/tmp/cache as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [adfc6e4c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/cache /home/deploy/apps/releases/20200429190544/tmp/cache )
+  INFO [adfc6e4c] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [043ffb2a] Running [ -L /home/deploy/apps/releases/20200429190544/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [043ffb2a] Command: [ -L /home/deploy/apps/releases/20200429190544/tmp/sockets ]
+ DEBUG [043ffb2a] Finished in 0.231 seconds with exit status 1 (failed).
+ DEBUG [041b5413] Running [ -d /home/deploy/apps/releases/20200429190544/tmp/sockets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [041b5413] Command: [ -d /home/deploy/apps/releases/20200429190544/tmp/sockets ]
+ DEBUG [041b5413] Finished in 0.235 seconds with exit status 1 (failed).
+  INFO [f3c04bd1] Running /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429190544/tmp/sockets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [f3c04bd1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/tmp/sockets /home/deploy/apps/releases/20200429190544/tmp/sockets )
+  INFO [f3c04bd1] Finished in 0.234 seconds with exit status 0 (successful).
+ DEBUG [9ae5aaed] Running [ -L /home/deploy/apps/releases/20200429190544/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9ae5aaed] Command: [ -L /home/deploy/apps/releases/20200429190544/public/assets ]
+ DEBUG [9ae5aaed] Finished in 0.232 seconds with exit status 1 (failed).
+ DEBUG [4ef52ba7] Running [ -d /home/deploy/apps/releases/20200429190544/public/assets ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4ef52ba7] Command: [ -d /home/deploy/apps/releases/20200429190544/public/assets ]
+ DEBUG [4ef52ba7] Finished in 0.235 seconds with exit status 1 (failed).
+  INFO [ab534cde] Running /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429190544/public/assets as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [ab534cde] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/shared/public/assets /home/deploy/apps/releases/20200429190544/public/assets )
+  INFO [ab534cde] Finished in 0.237 seconds with exit status 0 (successful).
+ DEBUG [0d568ae7] Running if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [0d568ae7] Command: if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi
+ DEBUG [0d568ae7] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [7de24f90] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/apps/shared/bundle as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [7de24f90] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle check --path /home/deploy/apps/shared/bundle )
+ DEBUG [7de24f90] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[33mThe dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby, x86_64-darwin-19 but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31mThe following gems are missing[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * public_suffix (4.0.4)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * addressable (2.7.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * net-ssh (6.0.2)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * net-scp (3.0.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * sshkit (1.21.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * airbrussh (1.4.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * io-like (0.3.1)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * archive-zip (0.12.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * bindex (0.8.1)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * byebug (11.1.3)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * capistrano (3.13.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * capistrano-bundler (1.6.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * capistrano-passenger (0.2.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * capistrano-rails (1.4.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * capistrano-rbenv (2.1.6)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * regexp_parser (1.7.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * xpath (3.2.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * capybara (3.32.1)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * childprocess (3.0.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * chromedriver-helper (2.1.1)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * ruby_dep (1.5.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * listen (3.1.5)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * rubyzip (2.3.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * selenium-webdriver (3.142.7)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * spring (2.1.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * spring-watcher-listen (2.0.1)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[31m * web-console (3.7.0)[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] 	[33mInstall missing gems with `bundle install`[0m
+ DEBUG [7de24f90] 	
+ DEBUG [7de24f90] Finished in 0.600 seconds with exit status 1 (failed).
+  INFO [e773dcfa] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [e773dcfa] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle install --path /home/deploy/apps/shared/bundle --jobs 4 --without development test --deployment --quiet )
+ DEBUG [e773dcfa] 	[33m[DEPRECATED] The `--deployment` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set deployment 'true'`, and stop using this flag[0m
+ DEBUG [e773dcfa] 	
+ DEBUG [e773dcfa] 	[33m[DEPRECATED] The `--path` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set path '/home/deploy/apps/shared/bundle'`, and stop using this flag[0m
+ DEBUG [e773dcfa] 	
+ DEBUG [e773dcfa] 	[33m[DEPRECATED] The `--without` flag is deprecated because it relies on being remembered across bundler invocations, which bundler will no longer do in future versions. Instead please use `bundle config set without 'development test'`, and stop using this flag[0m
+ DEBUG [e773dcfa] 	
+  INFO [e773dcfa] Finished in 0.672 seconds with exit status 0 (successful).
+ DEBUG [d18a2e4d] Running if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d18a2e4d] Command: if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi
+ DEBUG [d18a2e4d] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [84b3dba7] Running RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [84b3dba7] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" RAILS_ENV="production" RAILS_GROUPS="" ; RBENV_ROOT=$HOME/.rbenv RBENV_VERSION=2.4.6 $HOME/.rbenv/bin/rbenv exec bundle exec rake assets:precompile )
+ DEBUG [84b3dba7] 	Yarn executable was not detected in the system.
+ DEBUG [84b3dba7] 	
+ DEBUG [84b3dba7] 	Download Yarn at https://yarnpkg.com/en/docs/install
+ DEBUG [84b3dba7] 	
+  INFO [84b3dba7] Finished in 1.514 seconds with exit status 0 (successful).
+ DEBUG [474de142] Running if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [474de142] Command: if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi
+ DEBUG [474de142] Finished in 0.234 seconds with exit status 0 (successful).
+  INFO [9c581ed9] Running /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190544/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9c581ed9] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mkdir -p /home/deploy/apps/releases/20200429190544/assets_manifest_backup )
+  INFO [9c581ed9] Finished in 0.245 seconds with exit status 0 (successful).
+ DEBUG [c161dd5c] Running /usr/bin/env ls /home/deploy/apps/releases/20200429190544/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [c161dd5c] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429190544/public/assets/.sprockets-manifest* )
+ DEBUG [c161dd5c] 	/home/deploy/apps/releases/20200429190544/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [c161dd5c] 	
+ DEBUG [c161dd5c] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [5b9084cf] Running /usr/bin/env ls /home/deploy/apps/releases/20200429190544/public/assets/.sprockets-manifest* as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5b9084cf] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls /home/deploy/apps/releases/20200429190544/public/assets/.sprockets-manifest* )
+ DEBUG [5b9084cf] 	/home/deploy/apps/releases/20200429190544/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json
+ DEBUG [5b9084cf] 	
+ DEBUG [5b9084cf] Finished in 0.242 seconds with exit status 0 (successful).
+  INFO [42a25506] Running /usr/bin/env cp /home/deploy/apps/releases/20200429190544/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429190544/assets_manifest_backup as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [42a25506] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env cp /home/deploy/apps/releases/20200429190544/public/assets/.sprockets-manifest-84c3298cd5f01f9015f18ea06ba98e31.json /home/deploy/apps/releases/20200429190544/assets_manifest_backup )
+  INFO [42a25506] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [5786f857] Running /usr/bin/env ln -s /home/deploy/apps/releases/20200429190544 /home/deploy/apps/releases/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [5786f857] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ln -s /home/deploy/apps/releases/20200429190544 /home/deploy/apps/releases/current )
+  INFO [5786f857] Finished in 0.241 seconds with exit status 0 (successful).
+  INFO [afa3cc6b] Running /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [afa3cc6b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env mv /home/deploy/apps/releases/current /home/deploy/apps )
+  INFO [afa3cc6b] Finished in 0.238 seconds with exit status 0 (successful).
+ DEBUG [4c97a661] Running if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [4c97a661] Command: if test ! -d /home/deploy/apps/releases/20200429190544; then echo "Directory does not exist '/home/deploy/apps/releases/20200429190544'" 1>&2; false; fi
+ DEBUG [4c97a661] Finished in 0.227 seconds with exit status 0 (successful).
+ DEBUG [972c821a] Running /usr/bin/env passenger -v as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [972c821a] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env passenger -v )
+ DEBUG [972c821a] 	Phusion Passenger 6.0.4
+ DEBUG [972c821a] 	
+ DEBUG [972c821a] Finished in 0.321 seconds with exit status 0 (successful).
+  INFO [1a303dbc] Running /usr/bin/env passenger-config restart-app /home/deploy/apps --ignore-app-not-running as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1a303dbc] Command: cd /home/deploy/apps/releases/20200429190544 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env passenger-config restart-app /home/deploy/apps --ignore-app-not-running )
+ DEBUG [1a303dbc] 	Restarting /home/deploy/apps/current (production)
+ DEBUG [1a303dbc] 	
+  INFO [1a303dbc] Finished in 0.405 seconds with exit status 0 (successful).
+ DEBUG [2d371575] Running /usr/bin/env ls -x /home/deploy/apps/releases as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [2d371575] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env ls -x /home/deploy/apps/releases )
+ DEBUG [2d371575] 	20200429173433
+ DEBUG [2d371575] 		
+ DEBUG [2d371575] 	20200429182125
+ DEBUG [2d371575] 		
+ DEBUG [2d371575] 	20200429185832
+ DEBUG [2d371575] 		
+ DEBUG [2d371575] 	20200429190058
+ DEBUG [2d371575] 		
+ DEBUG [2d371575] 	20200429190434
+ DEBUG [2d371575] 	
+ DEBUG [2d371575] 	20200429190544
+ DEBUG [2d371575] 	
+ DEBUG [2d371575] Finished in 0.288 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9e376443] Running [ -d /home/deploy/apps/current ] as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [9e376443] Command: [ -d /home/deploy/apps/current ]
+ DEBUG [9e376443] Finished in 0.233 seconds with exit status 0 (successful).
+ DEBUG [b53de07d] Running /usr/bin/env readlink /home/deploy/apps/current as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [b53de07d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env readlink /home/deploy/apps/current )
+ DEBUG [b53de07d] 	/home/deploy/apps/releases/20200429190544
+ DEBUG [b53de07d] 	
+ DEBUG [b53de07d] Finished in 0.233 seconds with exit status 0 (successful).
+  INFO [1f58b5e8] Running /usr/bin/env rm -rf /home/deploy/apps/releases/20200429173433 as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [1f58b5e8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env rm -rf /home/deploy/apps/releases/20200429173433 )
+  INFO [1f58b5e8] Finished in 0.547 seconds with exit status 0 (successful).
+ DEBUG [a9763540] Running if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [a9763540] Command: if test ! -d /home/deploy/apps/releases; then echo "Directory does not exist '/home/deploy/apps/releases'" 1>&2; false; fi
+ DEBUG [a9763540] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [d9121b88] Running /usr/bin/env echo "Branch master (at 7405093cf64327dbb2ba8f9fbd987b08411b92f1) deployed as release 20200429190544 by jarp" >> /home/deploy/apps/revisions.log as deploy@ec2-3-225-20-143.compute-1.amazonaws.com
+ DEBUG [d9121b88] Command: cd /home/deploy/apps/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.4.6" ; /usr/bin/env echo "Branch master (at 7405093cf64327dbb2ba8f9fbd987b08411b92f1) deployed as release 20200429190544 by jarp" >> /home/deploy/apps/revisions.log )
+  INFO [d9121b88] Finished in 0.238 seconds with exit status 0 (successful).
