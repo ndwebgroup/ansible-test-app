@@ -6,7 +6,7 @@ ruby '2.4.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'pg', '0.20'
 # Use Puma as the app server
 gem 'passenger', '6.0.4'
 # Use SCSS for stylesheets
