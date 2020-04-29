@@ -8,7 +8,7 @@
 
 # set :bundle_path,     nil
 # set :bundle_binstubs, nil
-# set :bundle_flags,    '--system'
+# set :bundle_flags,    ''
 
 
 set :application, "my_app_name"
